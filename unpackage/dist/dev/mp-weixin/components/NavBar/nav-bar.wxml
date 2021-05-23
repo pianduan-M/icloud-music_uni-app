@@ -1,0 +1,1 @@
+<view class="nav_bar_container" style="{{'margin-top:'+(navbarTop+'px')+';'}}"><view class="nav_bar_left"><slot name="left"></slot></view><view class="nav_bar_center"><slot name="center"></slot></view><view class="nav_bar_right"><slot name="right"></slot></view></view>

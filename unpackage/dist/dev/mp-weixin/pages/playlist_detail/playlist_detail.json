@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "歌单详情",
+  "usingComponents": {
+    "play-list-tools": "/pages/playlist_detail/children/PlayListTools",
+    "playlist-info": "/pages/playlist_detail/children/PlaylistInfo",
+    "playlist-content-head": "/pages/playlist_detail/children/PlaylistContentHead",
+    "song-list": "/components/SongList/song-list",
+    "music-bar": "/components/MusicBar/music-Bar"
+  }
+}

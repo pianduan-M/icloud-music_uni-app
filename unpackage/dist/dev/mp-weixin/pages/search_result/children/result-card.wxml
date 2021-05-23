@@ -1,0 +1,1 @@
+<view class="card_container"><view class="card_inner"><view class="card_head"><slot name="title"></slot></view><view class="card-body"><slot name="body"></slot></view><view class="card_foot"><slot name="foot"></slot></view></view></view>

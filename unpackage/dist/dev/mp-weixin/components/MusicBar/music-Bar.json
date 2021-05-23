@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "current-play-list": "/components/CurrentPlayList/current-play-list"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "音乐",
+  "disableScroll": true,
+  "usingComponents": {
+    "banner": "/pages/index/children/Banner",
+    "ball-list": "/pages/index/children/BallList",
+    "recommend-playlist": "/pages/index/children/RecommendPlaylist",
+    "search": "/pages/index/children/Search",
+    "top-list": "/pages/index/children/TopList",
+    "music-bar": "/components/MusicBar/music-Bar"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "搜索结果",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "result-card": "/pages/search_result/children/result-card",
+    "song-list": "/components/SongList/song-list",
+    "playlist-list": "/components/PlaylistList/playlist-list",
+    "video-list": "/pages/search_result/children/video-list"
+  }
+}

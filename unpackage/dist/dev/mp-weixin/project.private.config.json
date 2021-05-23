@@ -1,0 +1,23 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "播放页面",
+          "pathName": "pages/play_music/play_music",
+          "query": "id=26305527",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

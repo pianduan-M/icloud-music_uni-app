@@ -1,0 +1,272 @@
+.search_result {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+.search_result .search_head {
+  position: relative;
+  width: 100%;
+  height: 100rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 30rpx;
+  padding-bottom: 10rpx;
+}
+.search_result .search_head .search_wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-flex: 4;
+  -webkit-flex: 4;
+          flex: 4;
+}
+.search_result .search_head .search_wrap input {
+  -webkit-box-flex: 4;
+  -webkit-flex: 4;
+          flex: 4;
+  padding: 10rpx;
+  border-bottom: 1px solid #3c3c3c;
+  background-color: #f8f8f8;
+}
+.search_result .search_head .search_wrap .input_plac {
+  color: #c7c7c7;
+  font-weight: 400;
+  font-size: 26rpx;
+}
+.search_result .search_head .search_wrap icon {
+  position: absolute;
+  margin: 0 15rpx;
+}
+.search_result .search_head .search_wrap .clear_icon {
+  right: 0;
+}
+.search_result .search_head .search_btn {
+  width: 80rpx;
+  text-align: right;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  float: right;
+}
+.search_result .nav_container {
+  position: relative;
+  box-sizing: border-box;
+}
+.search_result .nav_container .navScroll {
+  width: 100vw;
+  height: 60rpx;
+  margin-top: 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+}
+.search_result .nav_container .navScroll .nav_item_wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.search_result .nav_container .navScroll .navItem {
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  padding: 10rpx 30rpx;
+  position: relative;
+  z-index: 1;
+}
+.search_result .nav_container .active {
+  width: 72rpx;
+  height: 15rpx;
+  background-color: red;
+  position: absolute;
+  left: 5rpx;
+  bottom: 0rpx;
+  border-radius: 20rpx;
+  margin-left: 8rpx;
+  -webkit-transition: 0.4s -webkit-transform;
+  transition: 0.4s -webkit-transform;
+  transition: 0.4s transform;
+  transition: 0.4s transform, 0.4s -webkit-transform;
+}
+.search_result .search_suggest {
+  position: absolute;
+  left: 50%;
+  top: 100rpx;
+  width: 90vw;
+  height: 60vh;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #fff;
+  color: #3a3a3a;
+  z-index: 999;
+  box-shadow: 10rpx 20rpx 50rpx rgba(0, 0, 0, 0.1);
+}
+.search_result .search_suggest .search_suggest_wrap {
+  padding-top: 10rpx;
+}
+.search_result .search_suggest .search_suggest_wrap .suggest_item {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  width: 100%;
+  padding: 15rpx;
+}
+.search_result .search_suggest .search_suggest_wrap .suggest_item::after {
+  content: '';
+  position: absolute;
+  left: 50rpx;
+  right: 0;
+  bottom: 0;
+  height: 1rpx;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+  background-color: #f1f1f1;
+}
+.search_result .search_suggest .search_suggest_wrap .suggest_item icon {
+  width: 50rpx;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+}
+.search_result .search_suggest .search_suggest_wrap .suggest_item .item_value {
+  position: relative;
+  width: 100%;
+}
+.result_content {
+  box-sizing: border-box;
+  height: calc(100% - 100rpx - 80rpx);
+  position: relative;
+  padding: 30rpx 0;
+  overflow: hidden;
+}
+.result_content .result_content_head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.result_content .result_content_head .head_left {
+  width: 80rpx;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  text-align: center;
+}
+.result_content .result_content_head .head_left .iconfont {
+  color: var(--themeColor);
+}
+.result_content .result_content_head .head_center {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.result_content .result_content_head .head_center .num {
+  font-size: 24rpx;
+  color: #919191;
+  margin-left: 10rpx;
+}
+.result_content .result_content_head .head_center .icon {
+  width: 50rpx;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  text-align: center;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.result_content .result_content_head .head_right {
+  width: 80rpx;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  text-align: center;
+}
+.result_content .list_item {
+  padding: 10rpx 0rpx 10rpx 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.result_content .list_item .num {
+  width: 80rpx;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  text-align: center;
+  color: #919191;
+}
+.result_content .list_item .num .iconfont {
+  color: var(--themeColor);
+}
+.result_content .list_item .song_info {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  overflow: hidden;
+}
+.result_content .list_item .song_info .song_name_wrap {
+  width: 100%;
+  overflow: hidden;
+}
+.result_content .list_item .song_info .song_name_wrap .song_name {
+  width: 100%;
+  font-size: 32rpx;
+  color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.result_content .list_item .song_info .song_name_wrap .singer {
+  display: block;
+  width: 100%;
+  font-weight: 300;
+  font-size: 24rpx;
+  color: #919191;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.result_content .list_item .song_info .icon {
+  width: 50rpx;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  text-align: center;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: #919191;
+}
+.result_content .list_item .item_menu {
+  width: 80rpx;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  text-align: center;
+}
+
