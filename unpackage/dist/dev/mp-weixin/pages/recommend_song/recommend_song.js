@@ -262,16 +262,15 @@ var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(o
                   uni.hideLoading();
                 }, 5000);_context.next = 15;return (
                   (0, _index.default)({
-                    url: '/recommend/songs' }));case 15:res = _context.sent;
+                    url: '/recommend/songs' }));case 15:res = _context.sent;if (!(
 
-                console.log(res);
-                // 请求出错
-                if (!(res.data.code !== 200)) {_context.next = 22;break;}
+
+                res.data.code !== 200)) {_context.next = 21;break;}
                 (0, _utils.showToast)({
                   title: '加载错误！' });
 
                 _this.isError = true;
-                uni.hideLoading();return _context.abrupt("return");case 22:
+                uni.hideLoading();return _context.abrupt("return");case 21:
 
 
                 uni.hideLoading();
@@ -283,7 +282,7 @@ var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(o
                 // 保存到缓存
                 uni.setStorageSync('recommendPlaylist', {
                   date: Date.now(),
-                  recomend: recomend });case 27:case "end":return _context.stop();}}}, _callee);}))();
+                  recomend: recomend });case 26:case "end":return _context.stop();}}}, _callee);}))();
 
     },
     // 跳转播放

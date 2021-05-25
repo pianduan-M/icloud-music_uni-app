@@ -210,23 +210,6 @@ var _utils = __webpack_require__(/*! ../../utils/utils.js */ 10);function _inter
   methods: {
     // 发送请求函数
     getData: function getData(type) {var _this = this;
-
-      // 提取缓存 如果没有过期 直接用缓存
-      var homeData = uni.getStorageSync('homeData') || {};
-      if (homeData.date && type === "init") {
-        var nowDate = Date.now();
-        if (nowDate - homeData.date <= 1000 * 60 * 60) {
-          var res = homeData.res;
-          this.getBanners(res[0]);
-          this.getBallList(res[1]);
-          this.getRecommend(res[2]);
-          // this.getHomePage()
-          this.getTopList(res[3]);
-          this.getRecommendResource(res[4]);
-          return;
-        }
-      }
-
       // 先设置加载状态
       uni.showLoading({
         title: '加载中' });
@@ -255,12 +238,6 @@ var _utils = __webpack_require__(/*! ../../utils/utils.js */ 10);function _inter
 
       Promise.all([bannersRes, ballListRes, recommendRes, topListRes, recommendResource]).
       then(function (res) {
-        var homeData = {
-          date: Date.now(),
-          res: res };
-
-        uni.setStorageSync('homeData', homeData);
-
         _this.getBanners(res[0]);
         _this.getBallList(res[1]);
         _this.getRecommend(res[2]);

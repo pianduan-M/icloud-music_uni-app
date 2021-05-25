@@ -3,7 +3,6 @@
   "usingComponents": {
     "user-info": "/pages/user/children/user-info",
     "like-music": "/pages/user/children/like-music",
-    "user-playlist": "/pages/user/children/user-playlist",
     "playlist-tab": "/pages/user/children/playlist-tab",
     "music-bar": "/components/MusicBar/music-Bar"
   }

@@ -132,7 +132,6 @@
 				const res = await request({
 					url: '/recommend/songs'
 				})
-				console.log(res);
 				// 请求出错
 				if (res.data.code !== 200) {
 					showToast({

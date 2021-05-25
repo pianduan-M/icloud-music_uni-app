@@ -17,6 +17,11 @@
   -webkit-transform: scaleY(0.5);
           transform: scaleY(0.5);
 }
+.ball_list_wrap .ball_list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
 .ball_list_wrap .ball_list_item {
   margin: 20rpx;
   text-align: center;

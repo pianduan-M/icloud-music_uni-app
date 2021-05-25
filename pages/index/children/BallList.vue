@@ -66,7 +66,9 @@
 			transform: scaleY(0.5);
 		}
 
-		.ball_list {}
+		.ball_list {
+			display: flex;
+		}
 
 		.ball_list_item {
 			margin: 20rpx;

@@ -9,7 +9,7 @@
 				<BallList :ballList="ballList" />
 				<RecommendPlaylist :recommendList="recommendList" />
 				<RecommendPlaylist :recommendList="recommendResource" v-if="userInfo.userId"
-					:title="recommendResource[0].name" />
+					/>
 				<TopList :topList="topList" />
 				<RecommendVideo v-if="userInfo.userId"></RecommendVideo>
 			</view>
@@ -78,23 +78,6 @@
 		methods: {
 			// 发送请求函数
 			getData(type) {
-
-				// 提取缓存 如果没有过期 直接用缓存
-				const homeData = uni.getStorageSync('homeData') || {}
-				if (homeData.date && type === "init") {
-					const nowDate = Date.now()
-					if ((nowDate - homeData.date) <= (1000 * 60 * 60)) {
-						const res = homeData.res
-						this.getBanners(res[0])
-						this.getBallList(res[1])
-						this.getRecommend(res[2])
-						// this.getHomePage()
-						this.getTopList(res[3])
-						this.getRecommendResource(res[4])
-						return
-					}
-				}
-
 				// 先设置加载状态
 				uni.showLoading({
 					title: '加载中',
@@ -123,12 +106,6 @@
 
 				Promise.all([bannersRes, ballListRes, recommendRes, topListRes, recommendResource])
 					.then(res => {
-						const homeData = {
-							date: Date.now(),
-							res
-						}
-						uni.setStorageSync('homeData', homeData)
-
 						this.getBanners(res[0])
 						this.getBallList(res[1])
 						this.getRecommend(res[2])
