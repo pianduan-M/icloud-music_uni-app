@@ -4,8 +4,8 @@
 		<PlaylistTab :playlistType="playlistType" class="top_tab" :class="{fixed:scrollTop>=200}"
 			style="paddingLeft:30rpx;paddingRight:30rpx;" @tabclick="choosePlaylist" />
 
-		<scroll-view class="user_container" id="user_container" :scroll-into-view="view" enhanced scroll-y
-			scroll-with-animation enable-back-to-top @scroll="handleScroll">
+		<scroll-view class="user_container" style="height: 100vh;" :scroll-into-view="intoView" enhanced scroll-y
+			:scroll-with-animation="true"  @scroll="handleScroll">
 			<view class="user_wrap">
 				<!-- 用户信息 -->
 				<UserInfo :userInfo="userInfo" />
@@ -35,14 +35,14 @@
 	import request from '../../request/index.js'
 	var appInst = getApp();
 	import {
-		mapGetters
+		mapGetters,
+		mapState
 	} from 'vuex'
 
 
 	export default {
 		data() {
 			return {
-				userInfo: {},
 				playlist: {
 					created: [],
 					collect: [],
@@ -61,7 +61,7 @@
 				// 当前页面的scroll 值
 				scrollTop: 0,
 				isClick: false,
-				view: ''
+				intoView: '0'
 			}
 		},
 		components: {
@@ -71,19 +71,10 @@
 			PlaylistTab,
 			MusicBar
 		},
-		onLoad() {
-			this.getUsetInfo()
-
-		},
 		onShow() {
-			// 读取userinfo
-			this.getUsetInfo()
-			if (!this.playlist.like.nickname && this.userInfo.nickname) {
-				// 获取用户歌单
+			if (this.userInfo.userId && !this.playlist.like.nickname) {
 				this.getPlaylist()
 			}
-			// 重新更新 top值
-			// this.getEleTopValue()
 		},
 		mounted() {
 			this.$refs.userPlaylistRef.getPlaylistTop().then(res => {
@@ -92,14 +83,19 @@
 			})
 		},
 		methods: {
-			// 从缓存中读取账户信息
-			getUsetInfo() {
-				if (this.userInfo.nickname) return
-				this.userInfo = uni.getStorageSync('userInfo') || {};
-			},
 
 			// 获取用户歌单
 			async getPlaylist() {
+				// 提取缓存 如果没有过期 直接用缓存
+				const userPlaylist = uni.getStorageSync('userPlaylist') || {}
+				if (userPlaylist.date) {
+					const nowDate = Date.now()
+					if ((nowDate - userPlaylist.date) <= (1000 * 60 * 60)) {
+						this.playlist = userPlaylist
+						return
+					}
+				}
+
 				// 发送网络请求
 				const res = await request({
 					url: '/user/playlist',
@@ -128,13 +124,17 @@
 					}
 				})
 				this.playlist = playlist
+				// 缓存数据
+				playlist.date = Date.now()
+				uni.setStorageSync('userPlaylist', playlist)
 			},
 
 			// 收藏/创建 歌单切换
 			choosePlaylist(type) {
 				// 设置
 				this.playlistType = type === 'created_btn' ? 'created' : 'collect'
-				this.view = type === 'created_btn' ? 'playlist_created' : 'playlist_collect'
+
+				this.intoView = type === 'created_btn' ? 'playlist_created' : 'playlist_collect'
 
 				this.isClick = true,
 					// 设置scrollTop
@@ -155,7 +155,7 @@
 			},
 			// 歌单标题联动效果
 			setPlaylistTop(scrollTop) {
-				const {
+				let {
 					playlistTabTop,
 					isFixed,
 					playlistType,
@@ -163,6 +163,18 @@
 					playlistCreatedTop,
 					isClick
 				} = this
+
+				// 判断拿到的值对不对 不对重新拿
+				if (playlistCollectTop < 400) {
+					this.$refs.userPlaylistRef.getPlaylistTop().then(res => {
+						this.playlistCreatedTop = res[0].top
+						this.playlistCollectTop = res[1].top
+					})
+				}
+				if (scrollTop < 200) {
+					this.intoView = ""
+				}
+
 				// 如果页面scrollTop 大于 歌单tab的 top值 就让它定位
 				if (playlistTabTop && scrollTop >= playlistTabTop && !isFixed) {
 					this.isFixed = true
@@ -178,42 +190,26 @@
 				}
 
 				if (playlistCreatedTop && scrollTop < playlistCollectTop && playlistType === "collect") {
+
 					if (isClick) return
 					this.playlistType = "created"
 				}
 			},
-			logout() {
-				uni.showModal({
-					title: '',
-					content: '退出登录？',
-					showCancel: true,
-					cancelText: '取消',
-					cancelColor: '#000000',
-					confirmText: '确定',
-					confirmColor: '#3CC51F',
-					success: async (result) => {
-						if (result.confirm) {
-							// 退出登录
-							await request({
-								url: '/logout'
-							})
-							// 清除缓存
-							uni.clearStorageSync();
-							appInst.globalData.userInfo = {}
-							// 跳转页面
-							uni.reLaunch({
-								url: '/pages/user/index'
-							});
-						}
-
-					}
-
-				});
-			}
-		}
-		,
+		},
 		computed: {
-			...mapGetters(['currentSong'])
+			...mapGetters(['currentSong']),
+			...mapState(['userInfo']),
+		},
+		watch: {
+			userInfo() {
+				if (!this.userInfo.userId) {
+					this.playlist = {
+						created: [],
+						collect: [],
+						like: {},
+					}
+				}
+			}
 		}
 	}
 </script>
@@ -223,18 +219,21 @@
 		display: none !important;
 	}
 
+	.user {
+		width: 100vw;
+		height: 100vh;
+	}
+
 	.user_container {
 		width: 100vw;
 		height: 100vh;
-		background-color: #f6f6f6;
 		overflow: hidden;
+		background-color: #f6f6f6;
 		box-sizing: border-box;
 		position: relative;
 
-
 		.user_wrap {
 			padding: 30rpx;
-			margin-bottom: 100rpx;
 		}
 	}
 
@@ -242,7 +241,7 @@
 		position: fixed;
 		top: --window-top;
 		left: 0;
-		width: 100%;
+		right: 0;
 		background-color: #fff;
 		z-index: 999;
 		display: flex !important;

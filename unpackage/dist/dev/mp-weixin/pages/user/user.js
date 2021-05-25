@@ -166,7 +166,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var _index = _interopRequireDefault(__webpack_require__(/*! ../../request/index.js */ 9));
 
-var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var UserInfo = function UserInfo() {__webpack_require__.e(/*! require.ensure | pages/user/children/user-info */ "pages/user/children/user-info").then((function () {return resolve(__webpack_require__(/*! ./children/user-info.vue */ 120));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var LikeMusic = function LikeMusic() {__webpack_require__.e(/*! require.ensure | pages/user/children/like-music */ "pages/user/children/like-music").then((function () {return resolve(__webpack_require__(/*! ./children/like-music.vue */ 127));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var UserPlaylist = function UserPlaylist() {__webpack_require__.e(/*! require.ensure | pages/user/children/user-playlist */ "pages/user/children/user-playlist").then((function () {return resolve(__webpack_require__(/*! ./children/user-playlist.vue */ 134));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var PlaylistTab = function PlaylistTab() {__webpack_require__.e(/*! require.ensure | pages/user/children/playlist-tab */ "pages/user/children/playlist-tab").then((function () {return resolve(__webpack_require__(/*! ./children/playlist-tab.vue */ 141));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var MusicBar = function MusicBar() {__webpack_require__.e(/*! require.ensure | components/MusicBar/music-Bar */ "components/MusicBar/music-Bar").then((function () {return resolve(__webpack_require__(/*! @/components/MusicBar/music-Bar.vue */ 113));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var appInst = getApp();var _default =
+var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var UserInfo = function UserInfo() {__webpack_require__.e(/*! require.ensure | pages/user/children/user-info */ "pages/user/children/user-info").then((function () {return resolve(__webpack_require__(/*! ./children/user-info.vue */ 144));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var LikeMusic = function LikeMusic() {__webpack_require__.e(/*! require.ensure | pages/user/children/like-music */ "pages/user/children/like-music").then((function () {return resolve(__webpack_require__(/*! ./children/like-music.vue */ 151));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var UserPlaylist = function UserPlaylist() {__webpack_require__.e(/*! require.ensure | pages/user/children/user-playlist */ "pages/user/children/user-playlist").then((function () {return resolve(__webpack_require__(/*! ./children/user-playlist.vue */ 158));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var PlaylistTab = function PlaylistTab() {__webpack_require__.e(/*! require.ensure | pages/user/children/playlist-tab */ "pages/user/children/playlist-tab").then((function () {return resolve(__webpack_require__(/*! ./children/playlist-tab.vue */ 165));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var MusicBar = function MusicBar() {__webpack_require__.e(/*! require.ensure | components/MusicBar/music-Bar */ "components/MusicBar/music-Bar").then((function () {return resolve(__webpack_require__(/*! @/components/MusicBar/music-Bar.vue */ 137));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var appInst = getApp();var _default =
+
 
 
 
@@ -174,7 +175,6 @@ var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(o
 {
   data: function data() {
     return {
-      userInfo: {},
       playlist: {
         created: [],
         collect: [],
@@ -193,7 +193,7 @@ var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(o
       // 当前页面的scroll 值
       scrollTop: 0,
       isClick: false,
-      view: '' };
+      intoView: '0' };
 
   },
   components: {
@@ -203,19 +203,10 @@ var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(o
     PlaylistTab: PlaylistTab,
     MusicBar: MusicBar },
 
-  onLoad: function onLoad() {
-    this.getUsetInfo();
-
-  },
   onShow: function onShow() {
-    // 读取userinfo
-    this.getUsetInfo();
-    if (!this.playlist.like.nickname && this.userInfo.nickname) {
-      // 获取用户歌单
+    if (this.userInfo.userId && !this.playlist.like.nickname) {
       this.getPlaylist();
     }
-    // 重新更新 top值
-    // this.getEleTopValue()
   },
   mounted: function mounted() {var _this = this;
     this.$refs.userPlaylistRef.getPlaylistTop().then(function (res) {
@@ -224,19 +215,24 @@ var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(o
     });
   },
   methods: {
-    // 从缓存中读取账户信息
-    getUsetInfo: function getUsetInfo() {
-      if (this.userInfo.nickname) return;
-      this.userInfo = uni.getStorageSync('userInfo') || {};
-    },
 
     // 获取用户歌单
-    getPlaylist: function getPlaylist() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res, playlist;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+    getPlaylist: function getPlaylist() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var userPlaylist, nowDate, res, playlist;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                // 提取缓存 如果没有过期 直接用缓存
+                userPlaylist = uni.getStorageSync('userPlaylist') || {};if (!
+                userPlaylist.date) {_context.next = 6;break;}
+                nowDate = Date.now();if (!(
+                nowDate - userPlaylist.date <= 1000 * 60 * 60)) {_context.next = 6;break;}
+                _this2.playlist = userPlaylist;return _context.abrupt("return");case 6:_context.next = 8;return (
+
+
+
+
 
                   (0, _index.default)({
                     url: '/user/playlist',
                     data: {
-                      uid: _this2.userInfo.userId } }));case 2:res = _context.sent;
+                      uid: _this2.userInfo.userId } }));case 8:res = _context.sent;
 
 
                 // 创建一个 歌单对象 确认 创建歌单 和 收藏歌单
@@ -259,14 +255,18 @@ var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(o
                     }
                   }
                 });
-                _this2.playlist = playlist;case 6:case "end":return _context.stop();}}}, _callee);}))();
+                _this2.playlist = playlist;
+                // 缓存数据
+                playlist.date = Date.now();
+                uni.setStorageSync('userPlaylist', playlist);case 14:case "end":return _context.stop();}}}, _callee);}))();
     },
 
     // 收藏/创建 歌单切换
     choosePlaylist: function choosePlaylist(type) {var _this3 = this;
       // 设置
       this.playlistType = type === 'created_btn' ? 'created' : 'collect';
-      this.view = type === 'created_btn' ? 'playlist_created' : 'playlist_collect';
+
+      this.intoView = type === 'created_btn' ? 'playlist_created' : 'playlist_collect';
 
       this.isClick = true,
       // 设置scrollTop
@@ -286,7 +286,7 @@ var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(o
       this.scrollTop = scrollTop;
     },
     // 歌单标题联动效果
-    setPlaylistTop: function setPlaylistTop(scrollTop) {var
+    setPlaylistTop: function setPlaylistTop(scrollTop) {var _this4 = this;var
 
       playlistTabTop =
 
@@ -295,6 +295,18 @@ var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(o
 
 
       this.playlistTabTop,isFixed = this.isFixed,playlistType = this.playlistType,playlistCollectTop = this.playlistCollectTop,playlistCreatedTop = this.playlistCreatedTop,isClick = this.isClick;
+
+      // 判断拿到的值对不对 不对重新拿
+      if (playlistCollectTop < 400) {
+        this.$refs.userPlaylistRef.getPlaylistTop().then(function (res) {
+          _this4.playlistCreatedTop = res[0].top;
+          _this4.playlistCollectTop = res[1].top;
+        });
+      }
+      if (scrollTop < 200) {
+        this.intoView = "";
+      }
+
       // 如果页面scrollTop 大于 歌单tab的 top值 就让它定位
       if (playlistTabTop && scrollTop >= playlistTabTop && !isFixed) {
         this.isFixed = true;
@@ -310,42 +322,26 @@ var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(o
       }
 
       if (playlistCreatedTop && scrollTop < playlistCollectTop && playlistType === "collect") {
+
         if (isClick) return;
         this.playlistType = "created";
       }
-    },
-    logout: function logout() {
-      uni.showModal({
-        title: '',
-        content: '退出登录？',
-        showCancel: true,
-        cancelText: '取消',
-        cancelColor: '#000000',
-        confirmText: '确定',
-        confirmColor: '#3CC51F',
-        success: function () {var _success = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(result) {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:if (!
-                    result.confirm) {_context2.next = 6;break;}_context2.next = 3;return (
-
-                      (0, _index.default)({
-                        url: '/logout' }));case 3:
-
-                    // 清除缓存
-                    uni.clearStorageSync();
-                    appInst.globalData.userInfo = {};
-                    // 跳转页面
-                    uni.reLaunch({
-                      url: '/pages/user/index' });case 6:case "end":return _context2.stop();}}}, _callee2);}));function success(_x) {return _success.apply(this, arguments);}return success;}() });
-
-
-
-
-
-
     } },
 
+  computed: _objectSpread(_objectSpread({},
+  (0, _vuex.mapGetters)(['currentSong'])),
+  (0, _vuex.mapState)(['userInfo'])),
 
-  computed: _objectSpread({},
-  (0, _vuex.mapGetters)(['currentSong'])) };exports.default = _default;
+  watch: {
+    userInfo: function userInfo() {
+      if (!this.userInfo.userId) {
+        this.playlist = {
+          created: [],
+          collect: [],
+          like: {} };
+
+      }
+    } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

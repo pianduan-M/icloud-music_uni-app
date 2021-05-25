@@ -97,18 +97,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var m0 = _vm.FormatHighText(
-    _vm.resultMultiple.song.moreText,
-    _vm.resultMultiple.song.highText
-  )
-  var m1 = _vm.FormatHighText(
-    _vm.resultMultiple.playList.moreText,
-    _vm.resultMultiple.playList.highText
-  )
-  var m2 = _vm.FormatHighText(
-    _vm.resultMultiple.video.moreText,
-    _vm.resultMultiple.video.highText
-  )
+  var m0 = _vm.resultMultiple.playList
+    ? _vm.FormatHighText(
+        _vm.resultMultiple.song.moreText,
+        _vm.resultMultiple.song.highText
+      )
+    : null
+  var m1 = _vm.resultMultiple.playList
+    ? _vm.FormatHighText(
+        _vm.resultMultiple.playList.moreText,
+        _vm.resultMultiple.playList.highText
+      )
+    : null
+  var m2 = _vm.resultMultiple.playList
+    ? _vm.FormatHighText(
+        _vm.resultMultiple.video.moreText,
+        _vm.resultMultiple.video.highText
+      )
+    : null
   _vm.$mp.data = Object.assign(
     {},
     {
@@ -293,22 +299,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var _index = _interopRequireDefault(__webpack_require__(/*! ../../request/index */ 9));
+var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var ResultCard = function ResultCard() {__webpack_require__.e(/*! require.ensure | pages/search_result/children/result-card */ "pages/search_result/children/result-card").then((function () {return resolve(__webpack_require__(/*! ./children/result-card.vue */ 200));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var SongList = function SongList() {__webpack_require__.e(/*! require.ensure | components/SongList/song-list */ "components/SongList/song-list").then((function () {return resolve(__webpack_require__(/*! @/components/SongList/song-list.vue */ 193));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var PlaylistList = function PlaylistList() {__webpack_require__.e(/*! require.ensure | components/PlaylistList/playlist-list */ "components/PlaylistList/playlist-list").then((function () {return resolve(__webpack_require__(/*! @/components/PlaylistList/playlist-list.vue */ 207));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var VideoList = function VideoList() {__webpack_require__.e(/*! require.ensure | pages/search_result/children/video-list */ "pages/search_result/children/video-list").then((function () {return resolve(__webpack_require__(/*! ./children/video-list.vue */ 214));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-var _index = _interopRequireDefault(__webpack_require__(/*! ../../request/index */ 9));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
-var appInst = getApp();var ResultCard = function ResultCard() {__webpack_require__.e(/*! require.ensure | pages/search_result/children/result-card */ "pages/search_result/children/result-card").then((function () {return resolve(__webpack_require__(/*! ./children/result-card.vue */ 176));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var SongList = function SongList() {__webpack_require__.e(/*! require.ensure | components/SongList/song-list */ "components/SongList/song-list").then((function () {return resolve(__webpack_require__(/*! @/components/SongList/song-list.vue */ 169));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var PlaylistList = function PlaylistList() {__webpack_require__.e(/*! require.ensure | components/PlaylistList/playlist-list */ "components/PlaylistList/playlist-list").then((function () {return resolve(__webpack_require__(/*! @/components/PlaylistList/playlist-list.vue */ 183));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var VideoList = function VideoList() {__webpack_require__.e(/*! require.ensure | pages/search_result/children/video-list */ "pages/search_result/children/video-list").then((function () {return resolve(__webpack_require__(/*! ./children/video-list.vue */ 190));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -358,7 +353,9 @@ var appInst = getApp();var ResultCard = function ResultCard() {__webpack_require
   onShow: function onShow() {
     this.historySearch = uni.getStorageSync('historySearch') || [];
   },
-  methods: {
+  methods: _objectSpread(_objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)(['addPlaylistSong', 'setCurrentIndex', 'setPlaylist'])),
+  (0, _vuex.mapActions)(['autoPlay'])), {}, {
     getSearchResult: function getSearchResult(keywords) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 uni.showLoading({
                   title: '加载中' });
@@ -544,15 +541,17 @@ var appInst = getApp();var ResultCard = function ResultCard() {__webpack_require
       // 发搜索请求
       this.getSearchResult(value);
     },
-    toPlayMusic: function toPlayMusic(e) {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var id, currentSong;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
+    // 播放歌曲
+    toPlayMusic: function toPlayMusic(song) {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
+                _this6.addPlaylistSong({
+                  song: song });
 
-                id =
-                e.currentTarget.dataset.id;
-                currentSong = _this6.songs.find(function (item) {return item.id === id;});
-                appInst.globalData.playlist = [currentSong];
+                _this6.setCurrentIndex({
+                  currentIndex: 0 });
 
+                _this6.autoPlay();
                 uni.navigateTo({
-                  url: '/pages/play_music/play_music?id=' + id });case 4:case "end":return _context6.stop();}}}, _callee6);}))();
+                  url: '/pages/play_music/play_music' });case 4:case "end":return _context6.stop();}}}, _callee6);}))();
 
     },
     // 高亮关键词
@@ -576,10 +575,6 @@ var appInst = getApp();var ResultCard = function ResultCard() {__webpack_require
         });
 
       }, 200);
-
-      // this.navItemWidth = this.$refs.navItemWrapRef.$el.childNodes[0].offsetWidth
-      // // 计算navitem 宽度 跟下标宽度的插值 为了居中下标
-      // this.suffixDiffValue = (this.navItemWidth - this.$refs.suffixRef.$el.offsetWidth) / 4 - 2
     },
     // 结果页 sweiper change 事件
     handleswiperChange: function handleswiperChange(e) {
@@ -600,7 +595,25 @@ var appInst = getApp();var ResultCard = function ResultCard() {__webpack_require
     videoScrolltolower: function videoScrolltolower() {
       this.videoPage++;
       this.searchvideo(this.SearchValue);
-    } },
+    },
+    playAllSong: function playAllSong(playlist) {
+      this.setPlaylist({
+        playlist: playlist });
+
+      this.setCurrentIndex({
+        currentIndex: 0 });
+
+      this.autoPlay();
+      uni.navigateTo({
+        url: '/pages/play_music/play_music' });
+
+    },
+    // 播放视频
+    toPlayVideo: function toPlayVideo(id) {
+      uni.navigateTo({
+        url: '/pages/play_video/play_video?id=' + id });
+
+    } }),
 
   mounted: function mounted() {
     this.getNavItemWidth();

@@ -53,7 +53,7 @@
 									:key="item.id" />
 							</template>
 							<template v-slot:foot>
-								<view @click="changeNav({index:1,name:'单曲'})"
+								<view v-if="resultMultiple.playList" @click="changeNav({index:1,name:'单曲'})"
 									v-html="FormatHighText(resultMultiple.song.moreText,resultMultiple.song.highText)">
 								</view>
 							</template>
@@ -68,8 +68,8 @@
 									:playlist="item" :hightext="resultMultiple.playList.highText" />
 							</template>
 							<template v-slot:foot>
-								<view @click="changeNav({index:2,name:'歌单'})"
-									v-html="FormatHighText(resultMultiple.playList.moreText,resultMultiple.playList.highText)">
+								<view v-if="resultMultiple.playList" @click="changeNav({index:2,name:'歌单'})"
+									v-html="FormatHighText(resultMultiple.playList.moreText, resultMultiple.playList.highText)">
 								</view>
 							</template>
 						</result-card>
@@ -83,7 +83,7 @@
 									:hightext="resultMultiple.video.highText" />
 							</template>
 							<template v-slot:foot>
-								<view @click="changeNav({index:3,name:'视频'})"
+								<view v-if="resultMultiple.playList" @click="changeNav({index:3,name:'视频'})"
 									v-html="FormatHighText(resultMultiple.video.moreText,resultMultiple.video.highText)">
 								</view>
 							</template>
@@ -100,7 +100,7 @@
 							<text class="iconfont icon-play1"></text>
 						</view>
 						<view class="head_center">
-							<view class="text">
+							<view class="text" @click="playAllSong(songs)">
 								<text>播放全部</text>
 								<text class="num">({{songs.length}})</text>
 							</view>
@@ -112,25 +112,9 @@
 							<text class="iconfont icon-select"></text>
 						</view>
 					</view>
-					<view class="list_item" v-for="item in songs" :key="item.id" @click="toPlayMusic"
-						:data-id="item.id">
-						<!-- 序列 -->
-						<!-- <view class="num" style="{{index>=99?'font-size:24rpx':''}}">{{index+1}}</view> -->
-						<!-- 歌曲信息 -->
-						<view class="song_info">
-							<view class="song_name_wrap">
-								<view class="song_name">{{item.name}}</view>
-								<view class="singer">{{item.artists[0].name}}-{{item.album.name}}</view>
-							</view>
-							<view class="icon" v-if="item.mv !== 0">
-								<text class="iconfont icon-bofang"></text>
-							</view>
-						</view>
-						<!-- 右侧菜单栏 -->
-						<view class="item_menu">
-							<text class="iconfont icon-diandiandianshu"></text>
-						</view>
-					</view>
+					<SongList :song="item" v-for="(item,index) in songs" :index="index"
+						:key="item.id" />
+					
 				</scroll-view>
 			</swiper-item>
 			<!-- 歌单 -->
@@ -143,7 +127,9 @@
 			<!-- 视频 -->
 			<swiper-item>
 				<scroll-view class="result_content" scroll-y @scrolltolower="videoScrolltolower">
-					<VideoList v-for="item in videos" :key="item.vid" :video="item" :hightext="SearchValue" />
+					<view style="width: 100vw;padding:0 30rpx;">
+						<VideoList v-for="item in videos" :key="item.vid" :video="item" :hightext="SearchValue" />
+					</view>
 				</scroll-view>
 			</swiper-item>
 		</swiper>
@@ -154,7 +140,10 @@
 video
 <script>
 	import request from '../../request/index'
-	var appInst = getApp();
+	import {
+		mapMutations,
+		mapActions
+	} from 'vuex'
 
 	import ResultCard from './children/result-card.vue'
 	import SongList from '@/components/SongList/song-list.vue'
@@ -205,6 +194,8 @@ video
 			this.historySearch = uni.getStorageSync('historySearch') || [];
 		},
 		methods: {
+			...mapMutations(['addPlaylistSong', 'setCurrentIndex', 'setPlaylist']),
+			...mapActions(['autoPlay']),
 			async getSearchResult(keywords) {
 				uni.showLoading({
 					title: '加载中'
@@ -390,15 +381,17 @@ video
 				// 发搜索请求
 				this.getSearchResult(value)
 			},
-			async toPlayMusic(e) {
-				const {
-					id
-				} = e.currentTarget.dataset
-				const currentSong = this.songs.find(item => item.id === id)
-				appInst.globalData.playlist = [currentSong]
-
+			// 播放歌曲
+			async toPlayMusic(song) {
+				this.addPlaylistSong({
+					song
+				})
+				this.setCurrentIndex({
+					currentIndex: 0
+				})
+				this.autoPlay()
 				uni.navigateTo({
-					url: '/pages/play_music/play_music?id=' + id
+					url: '/pages/play_music/play_music'
 				});
 			},
 			// 高亮关键词
@@ -422,10 +415,6 @@ video
 					})
 
 				}, 200)
-
-				// this.navItemWidth = this.$refs.navItemWrapRef.$el.childNodes[0].offsetWidth
-				// // 计算navitem 宽度 跟下标宽度的插值 为了居中下标
-				// this.suffixDiffValue = (this.navItemWidth - this.$refs.suffixRef.$el.offsetWidth) / 4 - 2
 			},
 			// 结果页 sweiper change 事件
 			handleswiperChange(e) {
@@ -438,15 +427,33 @@ video
 			playlistScrolltolower() {
 				this.playlistPage++
 				this.searchPlaylist(this.SearchValue)
-			},// 单曲滚动触底 加载更多
+			}, // 单曲滚动触底 加载更多
 			songScrolltolower() {
 				this.songPage++
 				this.searchSongs(this.SearchValue)
-			},// 视频滚动触底 加载更多
+			}, // 视频滚动触底 加载更多
 			videoScrolltolower() {
 				this.videoPage++
 				this.searchvideo(this.SearchValue)
 			},
+			playAllSong(playlist) {
+				this.setPlaylist({
+					playlist
+				})
+				this.setCurrentIndex({
+					currentIndex: 0
+				})
+				this.autoPlay()
+				uni.navigateTo({
+					url: '/pages/play_music/play_music'
+				});
+			},
+			// 播放视频
+			toPlayVideo(id) {
+				uni.navigateTo({
+					url: '/pages/play_video/play_video?id=' + id
+				})
+			}
 		},
 		mounted() {
 			this.getNavItemWidth()
@@ -460,6 +467,7 @@ video
 				}
 			}
 		}
+		
 	}
 </script>
 

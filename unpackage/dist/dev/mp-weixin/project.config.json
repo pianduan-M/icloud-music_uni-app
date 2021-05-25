@@ -8,7 +8,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "",
-  "appid": "touristappid",
+  "appid": "wx54c160ffd7aeb064",
   "projectname": "iCloudMusic",
   "condition": {
     "search": {
@@ -27,10 +27,10 @@
       "current": 0,
       "list": [
         {
-          "name": "",
-          "path": "",
-          "query": "",
-          "id": 0
+          "name": "aaa",
+          "query": "id=89ADDE33C0AAE8EC14B99F6750DB954D",
+          "id": 0,
+          "pathName": "pages/play_video/play_video"
         }
       ]
     }

@@ -1,4 +1,4 @@
-const bese_url = 'http://192.168.1.14:5000'
+const bese_url = 'https://freehome.top/icloudMusic'
 
 export default function request(params) {
 
@@ -29,6 +29,11 @@ export default function request(params) {
 			...params,
 			url: bese_url + params.url,
 			success: (result) => {
+				if(result.data.code === 301 ){
+					uni.navigateTo({
+						
+					})
+				}
 				resolve(result)
 			},
 			fail: (err) => {

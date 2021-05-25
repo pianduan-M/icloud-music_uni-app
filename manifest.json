@@ -42,8 +42,8 @@
             },
             /* ios打包配置 */
             "ios" : {
-							"UIBackgroundModes":["audio"]
-						},
+                "UIBackgroundModes" : [ "audio" ]
+            },
             /* SDK配置 */
             "sdkConfigs" : {}
         }
@@ -52,12 +52,12 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "touristappid",
+        "appid" : "wx54c160ffd7aeb064",
         "setting" : {
             "urlCheck" : false
         },
         "usingComponents" : true,
-				"requiredBackgroundModes": ["audio"]
+        "requiredBackgroundModes" : [ "audio" ]
     },
     "mp-alipay" : {
         "usingComponents" : true

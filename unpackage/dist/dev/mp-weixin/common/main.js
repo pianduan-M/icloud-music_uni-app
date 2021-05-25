@@ -117,6 +117,7 @@ var _vuex = __webpack_require__(/*! vuex */ 8);
 
 
 
+
 var _index = _interopRequireDefault(__webpack_require__(/*! @/request/index */ 9));
 
 var _utils = __webpack_require__(/*! @/utils/utils */ 10);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
@@ -125,9 +126,8 @@ var _utils = __webpack_require__(/*! @/utils/utils */ 10);function _interopRequi
 
 {
   onLaunch: function onLaunch() {
-
+    this.initBackAudio();
   },
-
   onShow: function onShow() {var _this = this;
     if (uni.getBackgroundAudioPlayerState) {
       uni.getBackgroundAudioPlayerState({
@@ -151,10 +151,11 @@ var _utils = __webpack_require__(/*! @/utils/utils */ 10);function _interopRequi
 
   methods: _objectSpread(_objectSpread({},
   (0, _vuex.mapMutations)(['play', 'pause', 'prev', 'next', 'setPlaylist', 'setCurrentTime', 'setAudioManager',
-  'setCurrentIndex', 'setLyric', 'setPlayMode'])), {}, {
+  'setCurrentIndex', 'setLyric', 'setPlayMode', 'saveUserInfo'])), {}, {
 
     // 监听 背景音乐各种事件
     initBackAudio: function initBackAudio() {var _this2 = this;
+
       this.globalData.BackgroundAudioManager = uni.getBackgroundAudioManager();
       this.setAudioManager(this.globalData.BackgroundAudioManager);
       // 监听播放事件
@@ -164,6 +165,7 @@ var _utils = __webpack_require__(/*! @/utils/utils */ 10);function _interopRequi
       // 监听暂停
       this.globalData.BackgroundAudioManager.onPause(function () {
         _this2.pause();
+        uni.setStorageSync('currentTime', _this2.currentTime);
       });
 
       // 监听音频播放错误事件
@@ -172,6 +174,7 @@ var _utils = __webpack_require__(/*! @/utils/utils */ 10);function _interopRequi
         (0, _utils.showToast)({
           title: '播放错误！' });
 
+        uni.setStorageSync('currentTime', _this2.currentTime);
       });
       // 背景音频自然播放结束事件
       this.globalData.BackgroundAudioManager.onEnded(function (res) {
@@ -182,16 +185,16 @@ var _utils = __webpack_require__(/*! @/utils/utils */ 10);function _interopRequi
         _this2.prev();
       });
       // 用户在系统音乐播放面板点击下一曲事件
-      this.globalData.BackgroundAudioManager.onEnded(function (res) {
+      this.globalData.BackgroundAudioManager.onNext(function (res) {
         _this2.next();
       });
       // 音频加载中事件，当音频因为数据不足，需要停下来加载时会触发
       this.globalData.BackgroundAudioManager.onWaiting(function (res) {
         _this2.pause();
-        console.log('++++++++++++++++++++');
         uni.showLoading({
           title: '加载中' });
 
+        uni.setStorageSync('currentTime', _this2.currentTime);
       });
       // 背景音频进入可以播放状态，但不保证后面可以流畅播放
       this.globalData.BackgroundAudioManager.onWaiting(function (res) {
@@ -199,7 +202,8 @@ var _utils = __webpack_require__(/*! @/utils/utils */ 10);function _interopRequi
         uni.hideLoading();
       });
       //读取缓存数据
-      var playlist = uni.getStorageSync('playlist');
+      var userInfo = uni.getStorageSync('userInfo') || {};
+      var playlist = uni.getStorageSync('playlist') || [];
       var currentTime = uni.getStorageSync('currentTime') || 0;
       var currentIndex = uni.getStorageSync('currentIndex') || 0;
       var playMode = uni.getStorageSync('playMode') || 'list';
@@ -216,26 +220,22 @@ var _utils = __webpack_require__(/*! @/utils/utils */ 10);function _interopRequi
       this.setLyric({
         lyrics: lyrics });
 
+
+      this.saveUserInfo({
+        userInfo: userInfo });
+
       this.setPlayMode(playMode);
 
     } }),
 
 
-  mounted: function mounted() {
-    this.initBackAudio();
-  },
-  computed: _objectSpread({
+  computed: _objectSpread(_objectSpread({
     // 监听当前索引发生变化
     currentIndex: function currentIndex() {
       return this.$store.state.currentIndex;
     } },
   (0, _vuex.mapGetters)(['currentSong'])),
-
-  watch: {
-    // currentIndex(a, b) {
-    // 	this.setSongSrc(this.currentSong)
-    // }
-  } };exports.default = _default;
+  (0, _vuex.mapState)(['currentTime'])) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

@@ -2,7 +2,7 @@
 	<!-- 推荐歌单 -->
 	<view class="recommend_resource " v-if="recommendList.length">
 		<view class="recommed_title">
-			<view class="recommed_title_left">推荐歌单</view>
+			<view class="recommed_title_left">{{title}}</view>
 			<view class="recommed_title_right">
 				<text class="more">更多</text>
 				<text class="iconfont icon-rightarrow"> </text>
@@ -31,8 +31,12 @@
 			recommendList:{
 				type:Array,
 				default:[]
+			},
+			title:{
+				type:String,
+				default:'推荐歌单'
 			}
-		},
+		}
 	}
 </script>
 
@@ -52,6 +56,9 @@
 			padding: 0 30rpx;
 	
 			.recommed_title_left {
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
 				font-size: 36rpx;
 	
 			}
@@ -68,6 +75,9 @@
 	
 				.iconfont {
 					font-size: 20rpx;
+				}
+				.more {
+					white-space: nowrap;
 				}
 			}
 		}

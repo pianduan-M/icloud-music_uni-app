@@ -1,0 +1,328 @@
+<template>
+	<view class="play_video_container" :style="'height:'+deviceHeight+'px;'+'width:'+deviceWidth+'px'" v-if="deviceHeight !== 0">
+		<swiper :style="'height:'+deviceHeight+'px;'+'width:'+deviceWidth+'px'" class="swiper" vertical
+			:touchable="true" @change="swiperChange" :circular="currentIndex" >
+			<swiper-item @touchstart="touchStart(0)" class="video_item"
+				:style="'height:'+deviceHeight+'px;'+'width:'+deviceWidth+'px'">
+				<video
+					:style="first.isVertical?('height:'+deviceHeight+'px;'+'width:'+deviceWidth+'px'):'width:'+deviceWidth+'px' "
+					class="video" @waiting="videoWaiting" @play="videoPlay" :poster="first.coverUrl" :src="first.url"
+					@click="touchVideo" v-if="vid === first.vid" id="s55" object-fit="fill" :controls="isShowControls"
+					loop autoplay></video>
+				<image class="img" :src="first.coverUrl" v-if="vid !== second.vid" :style="'width:'+deviceWidth+'px'">
+				</image>
+			</swiper-item>
+
+			<swiper-item@touchstart="touchStart(1)" class="video_item"
+				:style="'height:'+deviceHeight+'px;'+'width:'+deviceWidth+'px'">
+				<image class="img" :src="second.coverUrl" v-if="vid !== second.vid" :style="'width:'+deviceWidth+'px'">
+				</image>
+				<video
+					:style="second.isVertical?('height:'+deviceHeight+'px;'+'width:'+deviceWidth+'px'):'width:'+deviceWidth+'px' "
+					class="video" @waiting="videoWaiting" @play="videoPlay" :poster="second.coverUrl" :src="second.url"
+					@click="touchVideo" v-if="vid === second.vid" object-fit="fill" loop :controls="isShowControls"
+					autoplay></video>
+				</swiper-item>
+
+				<swiper-item@touchstart="touchStart(2)" class="video_item"
+					:style="'height:'+deviceHeight+'px;'+'width:'+deviceWidth+'px'">
+					<image class="img" :src="thrid.coverUrl" v-if="vid !== thrid.vid"
+						:style="'width:'+deviceWidth+'px'">
+					</image>
+					<video
+						:style="thrid.isVertical?('height:'+deviceHeight+'px;'+'width:'+deviceWidth+'px'):'width:'+deviceWidth+'px' "
+						class="video" @waiting="videoWaiting" @play="videoPlay" :poster="thrid.coverUrl"
+						:src="thrid.url" @click="touchVideo" v-if="vid === thrid.vid" object-fit="fill" loop
+						:controls="isShowControls" autoplay></video>
+					</swiper-item>
+		</swiper>
+		<BackBtn />
+	</view>
+</template>
+
+<script>
+	import request from '../../request/index.js'
+	import {
+		makeFriendly,
+		showToast
+	} from '../../utils/utils.js'
+	// 返回按钮
+	import BackBtn from './children/back-btn.vue'
+	import {mapState, mapActions} from 'vuex'
+
+	export default {
+		onLoad(option) {
+			if (option.id) {
+				this.offset++
+				const {
+					id
+				} = option
+				if (id.length < 10) {
+					this.vid = id
+					this.getMvDetail(id)
+				} else {
+					this.vid = id
+					this.getVideoDetail(id)
+				}
+				return
+			}
+			this.getVideo()
+		},
+		data() {
+			return {
+				video: [],
+				first: {},
+				second: {},
+				thrid: {},
+				currentIndex: 0,
+				vid: '',
+				offset: -1,
+				// 控制视频 控件 显示隐藏
+				isShowControls: true,
+				// 屏幕宽高
+				deviceHeight: 0,
+				deviceWidth: 0,
+				// 当前swiper 索引
+				current: 0
+			}
+		},
+		mounted() {
+			uni.getSystemInfo({
+				success: (res) => {
+					this.deviceHeight = res.screenHeight
+					this.deviceWidth = res.screenWidth
+				}
+			})
+		},
+		methods: {
+			...mapActions(['switchPauseSong']),
+			touchStart(index) {
+				if (this.video.length <= 1) return
+				if (index === 0) {
+					const second = this.video[this.currentIndex + 1].data
+					this.second = {
+						url: second.urlInfo.url,
+						vid: second.vid,
+						coverUrl: second.coverUrl,
+						isVertical: second.height > second.width
+					}
+					if (this.currentIndex > 0) {
+						const thrid = this.video[this.currentIndex - 1].data
+						this.thrid = {
+							url: thrid.urlInfo.url,
+							vid: thrid.vid,
+							coverUrl: thrid.coverUrl,
+							isVertical: thrid.height > thrid.width
+						}
+
+					}
+				}
+				if (index === 1) {
+					const first = this.video[this.currentIndex - 1].data
+					this.first = {
+						url: first.urlInfo.url,
+						vid: first.vid,
+						coverUrl: first.coverUrl,
+						isVertical: first.height > first.width
+					}
+
+
+					const thrid = this.video[this.currentIndex + 1].data
+					this.thrid = {
+						url: thrid.urlInfo.url,
+						vid: thrid.vid,
+						coverUrl: thrid.coverUrl,
+						isVertical: thrid.height > thrid.width
+					}
+
+				}
+				if (index === 2) {
+					const first = this.video[this.currentIndex + 1].data
+					this.first = {
+						url: first.urlInfo.url,
+						vid: first.vid,
+						coverUrl: first.coverUrl,
+						isVertical: first.height > first.width
+					}
+
+					const second = this.video[this.currentIndex - 1].data
+					this.second = {
+						url: second.urlInfo.url,
+						vid: second.vid,
+						coverUrl: second.coverUrl,
+						isVertical: second.height > second.width
+					}
+				}
+			},
+			// swiper 索引改变事件
+			swiperChange(e) {
+				const {
+					current
+				} = e.detail
+				if (this.current !== 2) {
+					current > this.current ? this.currentIndex++ : this.currentIndex--
+				} else {
+					current === 0 ? this.currentIndex++ : this.currentIndex--
+				}
+
+				this.current = current
+
+				this.isShowControls = true
+				this.vid = this.video[this.currentIndex].data.vid
+				if (this.currentIndex >= this.video.length - 1) {
+					this.getVideo()
+				}
+			},
+			// 获取推荐视频
+			async getVideo() {
+				this.offset++
+				const res = await request({
+					url: '/video/timeline/recommend',
+					data: {
+						offset: this.offset
+					}
+				})
+				if (res.data.code !== 200) {
+					showToast({
+						title: '错误请重试'
+					})
+					return
+				}
+				const videos = res.data.datas
+				this.video.push(...videos)
+
+				if (!this.vid) {
+					const first = videos[0].data
+					this.first = {
+						url: first.urlInfo.url,
+						vid: first.vid,
+						coverUrl: first.coverUrl
+					}
+					this.vid = first.vid
+				}
+
+			},
+			// 根据id获取视频
+			async getVideoDetail(id) {
+				const res = await request({
+					url: '/video/detail',
+					data: {
+						id,
+					}
+				})
+
+				if (res.data.code !== 200) {
+					showToast({
+						title: '错误请重试'
+					})
+					return
+				}
+				// 播放地址
+				const res2 = await request({
+					url: '/video/url',
+					data: {
+						id,
+					}
+				})
+				const url = res2.data.urls[0].url
+
+				const first = res.data.data
+				this.vid = first.vid
+				this.first = {
+					url,
+					vid: id,
+					coverUrl: first.cover,
+					isVertical: first.height > first.width,
+				}
+				res.data.data.urlInfo = {
+					url
+				}
+				res.data.data.vid = id
+				res.data.data.coverUrl = first.cover
+				this.video.push(res.data)
+				this.getVideo()
+			},
+			// 根据id获取mv
+			async getMvDetail(mvid) {
+				console.log('mv');
+				const res = await request({
+					url: '/mv/detail',
+					data: {
+						mvid
+					}
+				})
+
+				if (res.data.code !== 200) {
+					showToast({
+						title: '错误请重试'
+					})
+					return
+				}
+				// 播放地址
+				const res2 = await request({
+					url: '/mv/url',
+					data: {
+						id: mvid,
+					}
+				})
+				const url = res2.data.data.url
+				const first = res.data.data
+
+				this.first = {
+					url,
+					vid: id,
+					coverUrl: first.cover,
+					isVertical: first.height > first.width,
+				}
+
+				res.data.data.urlInfo = {
+					url
+				}
+				res.data.data.vid = mvid
+				res.data.data.coverUrl = first.cover
+				this.video.push(res.data)
+				this.getVideo()
+			},
+			// 点击视频显示控件
+			touchVideo() {
+				this.isShowControls = true;
+				this.controlsTimeoutId && clearTimeout(this.controlsTimeoutId)
+				this.controlsTimeoutId = setTimeout(() => {
+					this.isShowControls = false;
+				}, 1000)
+			},
+			// 视频出现缓冲
+			videoWaiting() {
+				this.isShowControls = true;
+			},
+			// 监听视频播放
+			videoPlay() {
+				if(this.isPlay){
+					this.switchPauseSong()
+				}
+				this.isShowControls = false;
+			}
+		},
+		components: {
+			BackBtn
+		},
+		computed:{
+			...mapState(['isPlay'])
+		}
+	}
+</script>
+
+<style>
+	.swiper {
+
+		justify-content: center;
+		align-items: center;
+
+	}
+
+	.video_item {
+		align-items: center;
+		flex-direction: row;
+		background-color: #000;
+	}
+</style>

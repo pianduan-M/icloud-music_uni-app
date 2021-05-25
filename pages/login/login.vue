@@ -66,6 +66,7 @@
 		showToast
 	} from '../../utils/utils.js'
 	var appInst = getApp();
+	import {mapMutations} from 'vuex'
 
 	export default {
 		data() {
@@ -89,6 +90,7 @@
 			};
 		},
 		methods: {
+			...mapMutations(['saveUserInfo']),
 			// 切换登录类型 // 暂不支持 没找到验证码 方式获取用户信息的api
 			handleLoginType(e) {
 				const {
@@ -298,7 +300,6 @@
 				const {
 					code
 				} = result.data
-				console.log(result);
 				// 根据响应码提示响应状态
 				switch (code) {
 					case 400:
@@ -326,8 +327,12 @@
 					uni.setStorageSync('userInfo', result.data.profile);
 					uni.setStorageSync('token', result.data.token);
 					uni.setStorageSync("Cookie", result.data.cookie);
-					appInst.globalData.userInfo = result.data.profile
-
+					// 保存到vuex
+					this.saveUserInfo({userInfo:result.data.profile})
+					if(document){
+						document.cookie = result.data.cookie
+					}
+						
 					uni.navigateBack({
 						delta: 1
 					});

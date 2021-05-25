@@ -7,7 +7,7 @@
 				<text class="num">({{playlist.length}})</text>
 			</view>
 			<!-- 歌单列表项 -->
-			<scroll-view class="song_list_content" scroll-y enhanced :scroll-into-view="'song_'+currentIndex"
+			<scroll-view class="song_list_content" :show-scrollbar="false" scroll-y enhanced :scroll-into-view="'song_'+currentIndex"
 				v-if="playlist.length">
 
 				<view class="song_list_item" v-for="(item,index) in playlist" :key="item.id" :id="'song_'+index"

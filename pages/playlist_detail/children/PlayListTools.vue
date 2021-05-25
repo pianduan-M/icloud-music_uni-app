@@ -3,15 +3,18 @@
 		<view class="tool_wrap">
 			<div class="tool_item">
 				<text class="iconfont icon-success"></text>
-				<text>{{playlist.subscribedCount>0?playlist.subscribedCount:'收藏'}}</text>
+				<text v-if="playlist.subscribedCount>0">{{playlist.subscribedCount | FormatPlayCount}}</text>
+				<text v-if="playlist.subscribedCount<=0">收藏</text>
 			</div>
 			<div class="tool_item">
 				<text class="iconfont icon-comment-"></text>
-				<text>{{playlist.commentCount>0?playlist.commentCount:"评论"}}</text>
+				<text v-if="playlist.commentCount>0">{{playlist.commentCount | FormatPlayCount}}</text>
+				<text v-if="playlist.commentCount<=0">评论</text>
 			</div>
 			<div class="tool_item">
 				<text class="iconfont icon-share"></text>
-				<text>{{playlist.shareCount>0?playlist.shareCount:"分享"}}</text>
+				<text v-if="playlist.shareCount>0">{{playlist.shareCount | FormatPlayCount}}</text>
+				<text v-if="playlist.shareCount<=0">分享</text>
 			</div>
 		</view>
 	</view>

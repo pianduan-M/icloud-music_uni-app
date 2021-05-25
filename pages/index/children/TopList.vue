@@ -20,7 +20,7 @@
 						<text class="iconfont icon-rightarrow"></text>
 					</view>
 					<view class="top_row" v-for="(item2,index) in item.tracks" :key="item2.id" :index="item.topnum"
-						:data-parentId="item.id" :data-id="item2.id" bindtap="toPlay">
+						:data-parentId="item.id" :data-id="item2.id" @click="toPlay(item.tracks,index)">
 						<view class="song_cover">
 							<image :src="item2.al.picUrl" mode="widthFix"> </image>
 						</view>
@@ -46,6 +46,27 @@
 				type: Array,
 				default: []
 			}
+		},
+		methods: {
+			// 添加到播放列表
+			toPlay(playlist, currentIndex) {
+				console.log(playlist);
+				// 保存到vuex中
+				this.$store.commit('setPlaylist', {
+					playlist
+				})
+
+				this.$store.commit('setCurrentIndex', {
+					currentIndex
+				})
+				this.$store.dispatch('autoPlay')
+
+				// 跳转到播放页面
+				wx.navigateTo({
+					url: '/pages/play_music/play_music'
+				});
+
+			},
 		}
 	}
 </script>

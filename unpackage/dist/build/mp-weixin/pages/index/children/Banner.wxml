@@ -1,0 +1,1 @@
+<block wx:if="{{bannerList.length}}"><swiper class="banner" indicator-active-color="#f64649" autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}"><block wx:for="{{bannerList}}" wx:for-item="item" wx:for-index="__i0__" wx:key="imageUrl"><swiper-item class="banner_item"><image src="{{item.imageUrl}}" mode="widthFix"></image></swiper-item></block></swiper></block>

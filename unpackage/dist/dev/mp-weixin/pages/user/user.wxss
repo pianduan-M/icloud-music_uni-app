@@ -2,23 +2,26 @@
  .top_tab {
   display: none !important;
 }
+.user {
+  width: 100vw;
+  height: 100vh;
+}
 .user_container {
   width: 100vw;
   height: 100vh;
-  background-color: #f6f6f6;
   overflow: hidden;
+  background-color: #f6f6f6;
   box-sizing: border-box;
   position: relative;
 }
 .user_container .user_wrap {
   padding: 30rpx;
-  margin-bottom: 100rpx;
 }
 .fixed {
   position: fixed;
   top: --window-top;
   left: 0;
-  width: 100%;
+  right: 0;
   background-color: #fff;
   z-index: 999;
   display: -webkit-box !important;

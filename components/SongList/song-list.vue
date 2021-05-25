@@ -2,7 +2,7 @@
 	<view class="list_item">
 
 		<!-- 序列 -->
-		<view class="num"  :style="{fontSize: index>=99?'24rpx':''}">{{ index + 1}}</view>
+		<view class="num" :style="{fontSize: index>=99?'24rpx':''}">{{ index + 1}}</view>
 		<!-- 歌曲信息 -->
 		<view class="item_info">
 			<view class="item_name_wrap">
@@ -10,10 +10,12 @@
 				<view class="singer_wrap">
 					<span class="tag" v-if="song.fee == '1'">VIP</span>
 					<text class="tag" v-if="song.privilege && song.privilege.maxbr === 999000">SQ</text>
-					<text class="singer">{{song.ar[0].name}}-{{song.al.name}}</text>
+					<text
+						class="singer">{{song.ar?song.ar[0].name:song.artists[0].name }}-{{ song.al ? song.al.name:song.album.name }}
+					</text>
 				</view>
 			</view>
-			<view class="icon" v-if="song.mv !== 0">
+			<view class="icon" v-if="song.mv || song.mvid" @click="toPlayVideo">
 				<text class="iconfont icon-bofang"></text>
 			</view>
 		</view>
@@ -31,8 +33,17 @@
 				type: Object,
 				default: {}
 			},
-			index:{
-				type:Number
+			index: {
+				type: Number
+			}
+		},
+		methods: {
+			toPlayVideo() {
+				const id =  this.song.mv? this.song.mv:  this.song.mvid
+				
+				uni.navigateTo({
+					url: '/pages/play_video/play_video?id=' + id
+				})
 			}
 		}
 	}
@@ -44,6 +55,7 @@
 		padding: 10rpx 0 !important;
 		display: flex;
 		align-items: center;
+
 		// 左侧序列
 		.num {
 			width: 80rpx;
@@ -105,7 +117,7 @@
 					padding: 3rpx 10rpx;
 					line-height: 10rpx;
 					transform: scaleY(0.5);
-					
+
 					&::after {
 						content: '';
 						position: absolute;

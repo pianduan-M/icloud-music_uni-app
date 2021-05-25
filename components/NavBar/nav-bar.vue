@@ -21,7 +21,6 @@
 		},
 
 		created() {
-
 			let res = uni.getSystemInfoSync();
 			this.navbarTop = res.statusBarHeight + 5
 		}

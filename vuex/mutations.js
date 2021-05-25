@@ -24,7 +24,6 @@ export default {
 		uni.setStorageSync('currentIndex', state.currentIndex)
 		this.dispatch('autoPlay')
 	},
-
 	// 下一首
 	next(state) {
 		// 列表循环
@@ -50,7 +49,6 @@ export default {
 	// 当前播放时间
 	setCurrentTime(state, payload) {
 		state.currentTime = payload.currentTime
-		uni.setStorageSync('currentTime', payload.currentTime)
 	},
 	// 当前播放歌曲的索引
 	setCurrentIndex(state, payload) {
@@ -81,5 +79,18 @@ export default {
 	// 删除播放列表的歌曲
 	deletePlaylistSong(state, payload) {
 		state.playlist.splice(payload.index, 1)
+	},
+	// 保存用户信息
+	saveUserInfo(state, payload) {
+		state.userInfo = payload.userInfo
+	},
+	// 往当前歌单添加歌曲
+	addPlaylistSong(state, payload) {
+		state.playlist.unshift(payload.song)
+	},
+	// 清除用户信息
+	clearUserInfo(state) {
+		state.userInfo = {}
 	}
+
 }

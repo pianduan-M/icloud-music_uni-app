@@ -45,6 +45,24 @@ export default {
 			}
 		})
 	},
+	// 获取歌曲详情
+	getSongDetail({
+		getters
+	}) {
+		return new Promise(async (resolve, reject) => {
+			const res = await request({
+				url: '/song/detail',
+				data: {
+					ids: getters.currentSong.id,
+				}
+			})
+			if (res.data.code !== 200) {
+				reject('获取歌曲失败！')
+				return
+			}
+			resolve(res.data.songs[0])
+		})
+	},
 	// 获取歌词
 	async getLyric({
 		state,
@@ -115,23 +133,24 @@ export default {
 		commit,
 		getters
 	}) {
-			// 如果没有链接
+		// 如果没有链接
 		if (!state.BackgroundAudioManager.src) {
 			if (getters.currentSong.url) {
 				state.BackgroundAudioManager.src = getters.currentSong.url
 				state.BackgroundAudioManager.title = getters.currentSong.name
-				state.BackgroundAudioManager.seek(state.currentTime)
+				state.currentTime && state.BackgroundAudioManager.seek(state.currentTime)
 			} else {
 				this.dispatch('getSongSrc').then(res => {
 					state.BackgroundAudioManager.src = res
 					state.BackgroundAudioManager.title = getters.currentSong.name
-					state.BackgroundAudioManager.seek(state.currentTime)
+					state.currentTime && state.BackgroundAudioManager.seek(state.currentTime)
 				})
 			}
 		}
-
-		state.BackgroundAudioManager.play()
-		commit('play')
+		if (state.BackgroundAudioManager.paused && state.BackgroundAudioManager.src) {
+			state.BackgroundAudioManager.play()
+		}
+		// commit('play')
 	},
 	// 监听用户 暂停操作
 	switchPauseSong({
@@ -155,6 +174,13 @@ export default {
 			commit('next')
 			return
 		}
+		// 如果没有封面
+		if (!getters.currentSong.al) {
+			this.dispatch('getSongDetail').then(res => {
+				Object.assign(getters.currentSong, res)
+			})
+		}
+
 		getters.currentSong.url = url
 		state.BackgroundAudioManager.src = url
 		state.BackgroundAudioManager.title = getters.currentSong.name

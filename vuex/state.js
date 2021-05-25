@@ -1,5 +1,4 @@
 export default {
-	songId: '',
 	// 当前播放列表索引
 	currentIndex: 0,
 	// 控制播放
@@ -11,4 +10,5 @@ export default {
 	playMode: 'list',
 	BackgroundAudioManager: {},
 	lyrics: [],
+	userInfo: {}
 }

@@ -1,0 +1,1 @@
+.playlist_detail{position:relative;height:100%}.playlist_detail .playlist_content{position:relative;padding:30rpx 0}.playlist_detail .playlist_content .playlist_content_list{padding-top:20rpx}

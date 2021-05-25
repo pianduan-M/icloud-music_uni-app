@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "current-play-list": "/components/CurrentPlayList/current-play-list",
+    "nav-bar": "/components/NavBar/nav-bar"
+  }
+}

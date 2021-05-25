@@ -2,13 +2,16 @@
 	<view class="home">
 		<Search />
 		<!-- 内容区 -->
-		<scroll-view class="home_content" refresher-enabled scroll-y @refresherrefresh="handleResherrefresh"
-			:refresher-triggered="isTriggered">
+		<scroll-view class="home_content" :refresher-threshold="200" refresher-enabled scroll-y
+			@refresherrefresh="handleResherrefresh" :refresher-triggered="isTriggered">
 			<view class="home_content_wrap">
 				<Banner :bannerList="bannerList" />
 				<BallList :ballList="ballList" />
 				<RecommendPlaylist :recommendList="recommendList" />
+				<RecommendPlaylist :recommendList="recommendResource" v-if="userInfo.userId"
+					:title="recommendResource[0].name" />
 				<TopList :topList="topList" />
+				<RecommendVideo v-if="userInfo.userId"></RecommendVideo>
 			</view>
 			<!-- 音乐控件占位 -->
 			<view class="music_bar_seat" style="height:80rpx" :style="{display: currentSong?'':'none'}"></view>
@@ -25,10 +28,12 @@
 	import RecommendPlaylist from './children/RecommendPlaylist.vue'
 	import Search from './children/Search.vue'
 	import TopList from './children/TopList.vue'
+	import RecommendVideo from './children/recommendVideo.vue'
 	import MusicBar from '@/components/MusicBar/music-Bar.vue'
-	
+
 	import {
-		mapGetters
+		mapGetters,
+		mapState
 	} from 'vuex'
 
 	import request from '../../request/index'
@@ -37,9 +42,6 @@
 		makeFriendly,
 		showToast
 	} from '../../utils/utils.js'
-
-	// 获取应用实例
-	var appInst = getApp();
 
 	export default {
 		data() {
@@ -51,6 +53,7 @@
 				recommendList: [],
 				list: [],
 				topList: [],
+				recommendResource: [],
 				// 控制下拉刷新
 				isTriggered: false
 			}
@@ -62,14 +65,36 @@
 			Search,
 			TopList,
 			MusicBar,
+			RecommendVideo
 		},
 		onLoad() {
-			this.getData()
-
+			this.getData('init')
+		},
+		onShow() {
+			if (this.userInfo.userId && this.recommendResource.length <= 0) {
+				this.getData('init')
+			}
 		},
 		methods: {
 			// 发送请求函数
-			getData() {
+			getData(type) {
+
+				// 提取缓存 如果没有过期 直接用缓存
+				const homeData = uni.getStorageSync('homeData') || {}
+				if (homeData.date && type === "init") {
+					const nowDate = Date.now()
+					if ((nowDate - homeData.date) <= (1000 * 60 * 60)) {
+						const res = homeData.res
+						this.getBanners(res[0])
+						this.getBallList(res[1])
+						this.getRecommend(res[2])
+						// this.getHomePage()
+						this.getTopList(res[3])
+						this.getRecommendResource(res[4])
+						return
+					}
+				}
+
 				// 先设置加载状态
 				uni.showLoading({
 					title: '加载中',
@@ -87,14 +112,29 @@
 				const topListRes = request({
 					url: '/toplist'
 				})
+				let recommendResource
+				if (this.userInfo.userId) {
+					recommendResource = request({
+						url: '/recommend/resource'
+					})
+				} else {
+					recommendResource = Promise.resolve([])
+				}
 
-				Promise.all([bannersRes, ballListRes, recommendRes, topListRes])
+				Promise.all([bannersRes, ballListRes, recommendRes, topListRes, recommendResource])
 					.then(res => {
+						const homeData = {
+							date: Date.now(),
+							res
+						}
+						uni.setStorageSync('homeData', homeData)
+
 						this.getBanners(res[0])
 						this.getBallList(res[1])
 						this.getRecommend(res[2])
 						// this.getHomePage()
 						this.getTopList(res[3])
+						this.getRecommendResource(res[4])
 						// 加载完成在隐藏loading
 						uni.hideLoading()
 						// 关闭下拉刷新
@@ -124,7 +164,6 @@
 				});
 				this.recommendList = recommendList
 			},
-
 			// 排行榜
 			async getTopList(res) {
 				// const res = await request({ url: '/toplist' })
@@ -155,29 +194,14 @@
 				})
 				this.topList = topList
 			},
-			// 添加到播放列表
-			toPlay(e) {
-				// 获取当前歌曲id
-				const {
-					id,
-					parentid
-				} = e.currentTarget.dataset
-				const {
-					topList
-				} = this.data
-				const index = topList.findIndex(item => item.id === parentid)
-				// 存储当前歌单到缓存
-				uni.setStorageSync('playlist', topList[index].tracks);
-				appInst.globalData.playlist = topList[index].tracks
-
-				// 跳转到播放页面
-				uni.navigateTo({
-					url: '/pages/play_music/index?id=' + id
+			// 获取每日推荐歌单
+			async getRecommendResource(res) {
+				const recommendResource = res.data ? res.data.recommend : []
+				recommendResource.forEach(item => {
+					item.playCount = makeFriendly(item.playCount)
 				});
-
+				this.recommendResource = recommendResource
 			},
-
-
 			// 下拉刷新
 			handleResherrefresh() {
 				if (this.flag) return
@@ -188,10 +212,10 @@
 					this.flag = false
 				}, 300)
 			}
-
 		},
 		computed: {
-			...mapGetters(['currentSong'])
+			...mapGetters(['currentSong']),
+			...mapState(['userInfo'])
 		}
 	}
 </script>

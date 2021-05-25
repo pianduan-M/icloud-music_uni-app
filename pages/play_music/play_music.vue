@@ -5,7 +5,7 @@
 			<template v-slot:center>
 				<view class="">
 					<view class="songname">{{currentSong.name}}</view>
-					<view class="songSinger">{{currentSong.ar[0].name}}</view>
+					<view class="songSinger">{{currentSong.ar[0].name || currentSong.artists[0].name}}</view>
 				</view>
 			</template>
 			<template v-slot:left>
@@ -17,7 +17,7 @@
 
 		<!-- 背景 -->
 		<view class="song_bg ">
-			<image :src="currentSong.al.picUrl?currentSong.al.picUrl:defaultBgImg" mode="scaleToFill"></image>
+			<image :src="currentSong.al.picUrl || defaultBgImg" mode="scaleToFill"></image>
 			<view class="bg_mask"></view>
 		</view>
 
@@ -115,7 +115,7 @@
 				<view class="lrc">{{item.lyric}}</view>
 			</view>
 		</scroll-view>
-		<view class="no_lyrics" v-if="!lyrics.length">纯音乐没有歌词</view>
+		<view class="no_lyrics" v-if="lyrics.length === 0">纯音乐没有歌词</view>
 	</view>
 
 	<!-- 播放列表 -->
@@ -144,8 +144,6 @@
 	// 自定义navbar
 	import NavBar from '@/components/NavBar/nav-bar.vue'
 
-
-
 	export default {
 		data() {
 			return {
@@ -165,7 +163,6 @@
 				iSshowSongList: false
 			};
 		},
-
 		mounted() {
 
 			this.$nextTick(() => {
@@ -371,7 +368,6 @@
 			// 打开播放列表
 			showSongList() {
 				if (!this.iSshowSongList) {
-					console.log(this.$refs.playlistRef);
 					this.iSshowSongList = true
 					this.$refs.playlistRef.openPopup()
 				}

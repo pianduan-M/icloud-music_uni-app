@@ -1,5 +1,5 @@
 <template>
-	<view class="list_item">
+	<view class="list_item" @click="toPlay">
 		<!-- 图片 -->
 		<view class="cover">
 			<image class="cover_img" :src=" video.coverUrl " mode="widthFix"></image>
@@ -26,7 +26,7 @@
 		props: {
 			video: {
 				type: Object,
-				default:{}
+				default: {}
 			},
 			hightext: {
 				type: String,
@@ -38,7 +38,12 @@
 				if (!this.hightext) return text
 				// 高亮文字
 				var reg = new RegExp(this.hightext, 'i')
-				return text.replace(reg, `<span style='color:#55aaff'>${this.hightext}</span>`)
+				return `<span style="overflow: hidden;">${text.replace(reg, `<span style='color:#55aaff'>${this.hightext}</span>`)}</span>`
+			},
+			toPlay() {
+				uni.navigateTo({
+					url: '/pages/play_video/play_video?id=' + this.video.vid
+				})
 			}
 		}
 	}
@@ -51,6 +56,8 @@
 		display: flex;
 		align-items: center;
 		padding-left: 30rpx;
+		max-width: 100vw;
+		overflow: hidden;
 
 		// 左侧封面
 		.cover {
@@ -61,7 +68,7 @@
 			border-radius: 10rpx;
 			margin-right: 20rpx;
 			position: relative;
-			
+
 			.iconfont {
 				position: absolute;
 				top: 50%;
@@ -69,6 +76,7 @@
 				transform: translate(-50%, -50%);
 				color: white;
 			}
+
 			.img {
 				width: 100%;
 			}

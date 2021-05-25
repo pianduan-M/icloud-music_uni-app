@@ -7,6 +7,8 @@
   -webkit-align-items: center;
           align-items: center;
   padding-left: 30rpx;
+  max-width: 100vw;
+  overflow: hidden;
 }
 .list_item .cover {
   width: 180rpx;

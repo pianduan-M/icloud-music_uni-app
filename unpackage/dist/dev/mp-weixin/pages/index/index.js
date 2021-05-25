@@ -159,19 +159,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
 var _vuex = __webpack_require__(/*! vuex */ 8);
+
 
 
 
 var _index = _interopRequireDefault(__webpack_require__(/*! ../../request/index */ 9));
 
-var _utils = __webpack_require__(/*! ../../utils/utils.js */ 10);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var Banner = function Banner() {__webpack_require__.e(/*! require.ensure | pages/index/children/Banner */ "pages/index/children/Banner").then((function () {return resolve(__webpack_require__(/*! ./children/Banner.vue */ 78));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var BallList = function BallList() {__webpack_require__.e(/*! require.ensure | pages/index/children/BallList */ "pages/index/children/BallList").then((function () {return resolve(__webpack_require__(/*! ./children/BallList.vue */ 85));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var RecommendPlaylist = function RecommendPlaylist() {__webpack_require__.e(/*! require.ensure | pages/index/children/RecommendPlaylist */ "pages/index/children/RecommendPlaylist").then((function () {return resolve(__webpack_require__(/*! ./children/RecommendPlaylist.vue */ 92));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var Search = function Search() {__webpack_require__.e(/*! require.ensure | pages/index/children/Search */ "pages/index/children/Search").then((function () {return resolve(__webpack_require__(/*! ./children/Search.vue */ 99));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var TopList = function TopList() {__webpack_require__.e(/*! require.ensure | pages/index/children/TopList */ "pages/index/children/TopList").then((function () {return resolve(__webpack_require__(/*! ./children/TopList.vue */ 106));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var MusicBar = function MusicBar() {__webpack_require__.e(/*! require.ensure | components/MusicBar/music-Bar */ "components/MusicBar/music-Bar").then((function () {return resolve(__webpack_require__(/*! @/components/MusicBar/music-Bar.vue */ 113));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
+var _utils = __webpack_require__(/*! ../../utils/utils.js */ 10);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var Banner = function Banner() {__webpack_require__.e(/*! require.ensure | pages/index/children/Banner */ "pages/index/children/Banner").then((function () {return resolve(__webpack_require__(/*! ./children/Banner.vue */ 95));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var BallList = function BallList() {__webpack_require__.e(/*! require.ensure | pages/index/children/BallList */ "pages/index/children/BallList").then((function () {return resolve(__webpack_require__(/*! ./children/BallList.vue */ 102));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var RecommendPlaylist = function RecommendPlaylist() {__webpack_require__.e(/*! require.ensure | pages/index/children/RecommendPlaylist */ "pages/index/children/RecommendPlaylist").then((function () {return resolve(__webpack_require__(/*! ./children/RecommendPlaylist.vue */ 109));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var Search = function Search() {__webpack_require__.e(/*! require.ensure | pages/index/children/Search */ "pages/index/children/Search").then((function () {return resolve(__webpack_require__(/*! ./children/Search.vue */ 116));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var TopList = function TopList() {__webpack_require__.e(/*! require.ensure | pages/index/children/TopList */ "pages/index/children/TopList").then((function () {return resolve(__webpack_require__(/*! ./children/TopList.vue */ 123));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var RecommendVideo = function RecommendVideo() {__webpack_require__.e(/*! require.ensure | pages/index/children/recommendVideo */ "pages/index/children/recommendVideo").then((function () {return resolve(__webpack_require__(/*! ./children/recommendVideo.vue */ 130));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var MusicBar = function MusicBar() {__webpack_require__.e(/*! require.ensure | components/MusicBar/music-Bar */ "components/MusicBar/music-Bar").then((function () {return resolve(__webpack_require__(/*! @/components/MusicBar/music-Bar.vue */ 137));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
-
-// 获取应用实例
-var appInst = getApp();var _default =
 
 {
   data: function data() {
@@ -183,6 +185,7 @@ var appInst = getApp();var _default =
       recommendList: [],
       list: [],
       topList: [],
+      recommendResource: [],
       // 控制下拉刷新
       isTriggered: false };
 
@@ -193,15 +196,37 @@ var appInst = getApp();var _default =
     RecommendPlaylist: RecommendPlaylist,
     Search: Search,
     TopList: TopList,
-    MusicBar: MusicBar },
+    MusicBar: MusicBar,
+    RecommendVideo: RecommendVideo },
 
   onLoad: function onLoad() {
-    this.getData();
-
+    this.getData('init');
+  },
+  onShow: function onShow() {
+    if (this.userInfo.userId && this.recommendResource.length <= 0) {
+      this.getData('init');
+    }
   },
   methods: {
     // 发送请求函数
-    getData: function getData() {var _this = this;
+    getData: function getData(type) {var _this = this;
+
+      // 提取缓存 如果没有过期 直接用缓存
+      var homeData = uni.getStorageSync('homeData') || {};
+      if (homeData.date && type === "init") {
+        var nowDate = Date.now();
+        if (nowDate - homeData.date <= 1000 * 60 * 60) {
+          var res = homeData.res;
+          this.getBanners(res[0]);
+          this.getBallList(res[1]);
+          this.getRecommend(res[2]);
+          // this.getHomePage()
+          this.getTopList(res[3]);
+          this.getRecommendResource(res[4]);
+          return;
+        }
+      }
+
       // 先设置加载状态
       uni.showLoading({
         title: '加载中' });
@@ -219,14 +244,29 @@ var appInst = getApp();var _default =
       var topListRes = (0, _index.default)({
         url: '/toplist' });
 
+      var recommendResource;
+      if (this.userInfo.userId) {
+        recommendResource = (0, _index.default)({
+          url: '/recommend/resource' });
 
-      Promise.all([bannersRes, ballListRes, recommendRes, topListRes]).
+      } else {
+        recommendResource = Promise.resolve([]);
+      }
+
+      Promise.all([bannersRes, ballListRes, recommendRes, topListRes, recommendResource]).
       then(function (res) {
+        var homeData = {
+          date: Date.now(),
+          res: res };
+
+        uni.setStorageSync('homeData', homeData);
+
         _this.getBanners(res[0]);
         _this.getBallList(res[1]);
         _this.getRecommend(res[2]);
         // this.getHomePage()
         _this.getTopList(res[3]);
+        _this.getRecommendResource(res[4]);
         // 加载完成在隐藏loading
         uni.hideLoading();
         // 关闭下拉刷新
@@ -256,7 +296,6 @@ var appInst = getApp();var _default =
       });
       this.recommendList = recommendList;
     },
-
     // 排行榜
     getTopList: function getTopList(res) {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var topArr, topIds, promises, topList;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 // const res = await request({ url: '/toplist' })
@@ -287,43 +326,28 @@ var appInst = getApp();var _default =
                 });
                 _this2.topList = topList;case 9:case "end":return _context.stop();}}}, _callee);}))();
     },
-    // 添加到播放列表
-    toPlay: function toPlay(e) {
-      // 获取当前歌曲id
-      var _e$currentTarget$data =
-
-
-      e.currentTarget.dataset,id = _e$currentTarget$data.id,parentid = _e$currentTarget$data.parentid;var
-
-      topList =
-      this.data.topList;
-      var index = topList.findIndex(function (item) {return item.id === parentid;});
-      // 存储当前歌单到缓存
-      uni.setStorageSync('playlist', topList[index].tracks);
-      appInst.globalData.playlist = topList[index].tracks;
-
-      // 跳转到播放页面
-      uni.navigateTo({
-        url: '/pages/play_music/index?id=' + id });
-
-
+    // 获取每日推荐歌单
+    getRecommendResource: function getRecommendResource(res) {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var recommendResource;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                recommendResource = res.data ? res.data.recommend : [];
+                recommendResource.forEach(function (item) {
+                  item.playCount = (0, _utils.makeFriendly)(item.playCount);
+                });
+                _this3.recommendResource = recommendResource;case 3:case "end":return _context2.stop();}}}, _callee2);}))();
     },
-
-
     // 下拉刷新
-    handleResherrefresh: function handleResherrefresh() {var _this3 = this;
+    handleResherrefresh: function handleResherrefresh() {var _this4 = this;
       if (this.flag) return;
       this.isTriggered = true;
       this.flag = true;
       this.getData();
       setTimeout(function () {
-        _this3.flag = false;
+        _this4.flag = false;
       }, 300);
     } },
 
-
-  computed: _objectSpread({},
-  (0, _vuex.mapGetters)(['currentSong'])) };exports.default = _default;
+  computed: _objectSpread(_objectSpread({},
+  (0, _vuex.mapGetters)(['currentSong'])),
+  (0, _vuex.mapState)(['userInfo'])) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

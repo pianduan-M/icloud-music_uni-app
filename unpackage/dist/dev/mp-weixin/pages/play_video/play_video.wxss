@@ -1,0 +1,37 @@
+.video_info_container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.goback {
+  width: 60rpx;
+  height: 40px;
+  line-height: 60rpx;
+  color: #fff;
+}
+.play_video_container {
+  width: 100vw;
+  height: 100vh;
+  background-color: pink;
+}
+.play_video_container .video_item {
+  height: 100vw;
+  width: 100vh;
+  background-color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.play_video_container .video_item .video {
+  width: 100%;
+}
+

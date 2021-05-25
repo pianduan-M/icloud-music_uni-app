@@ -194,10 +194,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _index = _interopRequireDefault(__webpack_require__(/*! ../../request/index.js */ 9));
-var _utils = __webpack_require__(/*! ../../utils/utils.js */ 10);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+var _utils = __webpack_require__(/*! ../../utils/utils.js */ 10);
 
 
-var appInst = getApp();var _default =
+
+var _vuex = __webpack_require__(/*! vuex */ 8);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var appInst = getApp();var _default =
 
 {
   data: function data() {
@@ -220,7 +221,8 @@ var appInst = getApp();var _default =
       timer: '' };
 
   },
-  methods: {
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)(['saveUserInfo'])), {}, {
     // 切换登录类型 // 暂不支持 没找到验证码 方式获取用户信息的api
     handleLoginType: function handleLoginType(e) {var
 
@@ -430,24 +432,23 @@ var appInst = getApp();var _default =
 
                 code =
                 result.data.code;
-                console.log(result);
                 // 根据响应码提示响应状态
                 _context2.t0 = code;_context2.next = _context2.t0 ===
-                400 ? 21 : _context2.t0 ===
+                400 ? 20 : _context2.t0 ===
 
 
 
 
 
-                502 ? 23 : _context2.t0 ===
+                502 ? 22 : _context2.t0 ===
 
 
 
 
 
-                200 ? 25 : 27;break;case 21:(0, _utils.showToast)({ title: '手机号码错误！' });return _context2.abrupt("break", 27);case 23:(0, _utils.showToast)({ title: '账号/密码错误！' });return _context2.abrupt("break", 27);case 25:
+                200 ? 24 : 26;break;case 20:(0, _utils.showToast)({ title: '手机号码错误！' });return _context2.abrupt("break", 26);case 22:(0, _utils.showToast)({ title: '账号/密码错误！' });return _context2.abrupt("break", 26);case 24:
                 (0, _utils.showToast)({
-                  title: '登录成功！' });return _context2.abrupt("break", 27);case 27:
+                  title: '登录成功！' });return _context2.abrupt("break", 26);case 26:
 
 
 
@@ -458,13 +459,17 @@ var appInst = getApp();var _default =
                   uni.setStorageSync('userInfo', result.data.profile);
                   uni.setStorageSync('token', result.data.token);
                   uni.setStorageSync("Cookie", result.data.cookie);
-                  appInst.globalData.userInfo = result.data.profile;
+                  // 保存到vuex
+                  _this3.saveUserInfo({ userInfo: result.data.profile });
+                  if (document) {
+                    document.cookie = result.data.cookie;
+                  }
 
                   uni.navigateBack({
                     delta: 1 });
 
-                }case 28:case "end":return _context2.stop();}}}, _callee2);}))();
-    } },
+                }case 27:case "end":return _context2.stop();}}}, _callee2);}))();
+    } }),
 
   beforeDestroy: function beforeDestroy() {
     this.intervalId && clearInterval(this.intervalId);

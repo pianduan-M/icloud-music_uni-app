@@ -14,6 +14,9 @@
   padding: 0 30rpx;
 }
 .recommend_resource .recommed_title .recommed_title_left {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   font-size: 36rpx;
 }
 .recommend_resource .recommed_title .recommed_title_right {
@@ -34,6 +37,9 @@
 }
 .recommend_resource .recommed_title .recommed_title_right .iconfont {
   font-size: 20rpx;
+}
+.recommend_resource .recommed_title .recommed_title_right .more {
+  white-space: nowrap;
 }
 .recommend_resource .recommend_resource_content {
   height: 300rpx;

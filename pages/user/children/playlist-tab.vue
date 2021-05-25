@@ -32,6 +32,7 @@
 		padding-bottom: 10rpx;
 		display: flex;
 		justify-content: center;
+		width: 100%;
 
 		// 歌单 tab栏
 		.tab_item {

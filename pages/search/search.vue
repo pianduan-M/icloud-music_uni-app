@@ -12,7 +12,7 @@
 					@click.stop="cleartHistory"></icon>
 			</view>
 			<!-- 按钮 -->
-			<view class="search_btn" data-type="btn" @click="search">取消</view>
+			<view class="search_btn" data-type="btn" @click="search">搜索</view>
 		</view>
 
 		<!-- 内容区 -->

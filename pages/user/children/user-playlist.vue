@@ -105,16 +105,18 @@
 			// 获取 列表 top值 
 			getPlaylistTop() {
 				return new Promise((resolve, reject) => {
-					setTimeout(() => {
-						const query = uni.createSelectorQuery().in(this);
-						query.select('#playlist_created').boundingClientRect()
-						query.select('#playlist_collect').boundingClientRect()
-						const that = this
-						query.exec(function(res) {
-							resolve(res)
-						})
+					this.$nextTick(() => {
+						setTimeout(() => {
+							const query = uni.createSelectorQuery().in(this);
+							query.select('#playlist_created').boundingClientRect()
+							query.select('#playlist_collect').boundingClientRect()
+							const that = this
+							query.exec(function(res) {
+								resolve(res)
+							})
 
-					}, 200)
+						}, 300)
+					})
 				})
 			}
 		},
@@ -122,17 +124,6 @@
 </script>
 
 <style lang="less">
-	// 锚点元素
-
-	// .Anchor::before{
-	// 	content: "";
-	// 	display: block;
-	// 	width: 100%;
-	// 	height: 50px;
-	// 	margin-top: -50px;
-	// }
-
-
 	// 歌单
 	.playlist {
 

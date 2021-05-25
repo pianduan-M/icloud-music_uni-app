@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="80ae9897-0ffa-4e2f-a5bd-9e7ce273972d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../components/CurrentPlayList/current-play-list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../components/CurrentPlayList/current-play-list.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../components/MusicBar/music-Bar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../components/MusicBar/music-Bar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../components/NavBar/nav-bar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../components/NavBar/nav-bar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../components/SongList/song-list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../components/SongList/song-list.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/index/children/BallList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/index/children/BallList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/index/children/RecommendPlaylist.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/index/children/RecommendPlaylist.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/index/children/TopList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/index/children/TopList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/index/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/login/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/login/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/play_music/new_file.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/play_music/play_music.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/play_music/play_music.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/playlist_detail/children/PlayListTools.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/playlist_detail/children/PlayListTools.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/search_result/children/video-list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/search_result/children/video-list.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/search_result/search_result.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/search_result/search_result.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/user/children/playlist-tab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/user/children/playlist-tab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/user/children/user-info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/user/children/user-info.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/user/children/user-playlist.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/user/children/user-playlist.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pages/user/user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pages/user/user.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../request/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../request/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../static/style/icofont.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../static/style/icofont.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/common/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/common/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/common/runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/common/runtime.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/components/CurrentPlayList/current-play-list.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/components/CurrentPlayList/current-play-list.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/components/MusicBar/music-Bar.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/components/MusicBar/music-Bar.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/components/NavBar/nav-bar.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/components/NavBar/nav-bar.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/components/PlaylistList/playlist-list.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/components/PlaylistList/playlist-list.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/components/songList/song-list.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/components/songList/song-list.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/children/BallList.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/children/BallList.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/children/Banner.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/children/Banner.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/children/RecommendPlaylist.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/children/RecommendPlaylist.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/children/Search.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/children/Search.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/children/TopList.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/children/TopList.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/login/login.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/login/login.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/play_music/play_music.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/play_music/play_music.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/playlist_detail/children/PlayListTools.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/playlist_detail/children/PlayListTools.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/playlist_detail/children/PlaylistContentHead.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/playlist_detail/children/PlaylistContentHead.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/playlist_detail/children/PlaylistInfo.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/playlist_detail/children/PlaylistInfo.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/playlist_detail/playlist_detail.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/playlist_detail/playlist_detail.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/search/search.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/search/search.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/search_result/children/result-card.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/search_result/children/result-card.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/search_result/children/video-list.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/search_result/children/video-list.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/search_result/search_result.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/search_result/search_result.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/user/children/like-music.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/user/children/like-music.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/user/children/playlist-tab.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/user/children/playlist-tab.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/user/children/user-info.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/user/children/user-info.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/user/children/user-playlist.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/user/children/user-playlist.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/user/user.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/pages/user/user.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/uni_modules/uni-popup/components/uni-popup/uni-popup.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/.sourcemap/mp-weixin/uni_modules/uni-popup/components/uni-popup/uni-popup.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/app-plus/app-config-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/app-plus/app-config-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/app-plus/app-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/app-plus/app-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/app-plus/app-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/app-plus/app-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/app-plus/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/app-plus/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/app-plus/static/style/icofont.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/app-plus/static/style/icofont.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/common/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/common/main.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/common/main.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/common/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/common/runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/common/vendor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/CurrentPlayList/current-play-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/CurrentPlayList/current-play-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/CurrentPlayList/current-play-list.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/CurrentPlayList/current-play-list.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/MusicBar/music-Bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/MusicBar/music-Bar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/MusicBar/music-Bar.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/MusicBar/music-Bar.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/NavBar/nav-bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/NavBar/nav-bar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/PlaylistList/playlist-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/PlaylistList/playlist-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/SongList/song-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/SongList/song-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/SongList/song-list.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/components/SongList/song-list.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/BallList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/BallList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/BallList.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/BallList.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/Banner.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/Banner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/RecommendPlaylist.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/RecommendPlaylist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/RecommendPlaylist.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/RecommendPlaylist.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/RecommendPlaylist.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/RecommendPlaylist.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/TopList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/TopList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/TopList.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/children/TopList.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/play_music/play_music.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/play_music/play_music.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/play_music/play_music.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/play_music/play_music.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/playlist_detail/children/PlayListTools.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/playlist_detail/children/PlayListTools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/playlist_detail/children/PlayListTools.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/playlist_detail/children/PlayListTools.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/playlist_detail/children/PlaylistContentHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/playlist_detail/children/PlaylistContentHead.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/playlist_detail/children/PlaylistInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/playlist_detail/children/PlaylistInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/playlist_detail/playlist_detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/playlist_detail/playlist_detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/children/result-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/children/result-card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/children/video-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/children/video-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/children/video-list.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/children/video-list.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/children/video-list.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/children/video-list.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/search_result.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/search_result.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/search_result.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/search_result/search_result.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/like-music.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/like-music.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/playlist-tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/playlist-tab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/playlist-tab.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/playlist-tab.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/user-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/user-info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/user-info.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/user-info.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/user-playlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/children/user-playlist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/user.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/user.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/user.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/pages/user/user.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/project.private.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/project.private.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/static/style/icofont.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/static/style/icofont.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/uni_modules/uni-popup/components/uni-popup/uni-popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/uni_modules/uni-popup/components/uni-popup/uni-popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/uni_modules/uni-transition/components/uni-transition/uni-transition.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dist/dev/mp-weixin/uni_modules/uni-transition/components/uni-transition/uni-transition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../vuex/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../vuex/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../vuex/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../vuex/mutations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../vuex/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../vuex/state.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1t1Oe1KX24csN4XElO3iiEsqywN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="80ae9897-0ffa-4e2f-a5bd-9e7ce273972d" name="Default Changelist" comment="" />
+      <created>1621933220673</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621933220673</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

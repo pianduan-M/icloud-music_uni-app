@@ -1,7 +1,8 @@
 <script>
 	import {
 		mapMutations,
-		mapGetters
+		mapGetters,
+		mapState
 	} from 'vuex'
 
 	import request from '@/request/index'
@@ -12,9 +13,8 @@
 
 	export default {
 		onLaunch: function() {
-
+			this.initBackAudio()
 		},
-
 		onShow: function() {
 			if (uni.getBackgroundAudioPlayerState) {
 				uni.getBackgroundAudioPlayerState({
@@ -38,10 +38,11 @@
 		},
 		methods: {
 			...mapMutations(['play', 'pause', 'prev', 'next', 'setPlaylist', 'setCurrentTime', 'setAudioManager',
-				'setCurrentIndex', 'setLyric', 'setPlayMode'
+				'setCurrentIndex', 'setLyric', 'setPlayMode', 'saveUserInfo'
 			]),
 			// 监听 背景音乐各种事件
 			initBackAudio() {
+
 				this.globalData.BackgroundAudioManager = uni.getBackgroundAudioManager()
 				this.setAudioManager(this.globalData.BackgroundAudioManager)
 				// 监听播放事件
@@ -51,6 +52,7 @@
 				// 监听暂停
 				this.globalData.BackgroundAudioManager.onPause(() => {
 					this.pause()
+					uni.setStorageSync('currentTime', this.currentTime)
 				})
 
 				// 监听音频播放错误事件
@@ -59,6 +61,7 @@
 					showToast({
 						title: '播放错误！'
 					})
+					uni.setStorageSync('currentTime', this.currentTime)
 				})
 				// 背景音频自然播放结束事件
 				this.globalData.BackgroundAudioManager.onEnded(res => {
@@ -69,16 +72,16 @@
 					this.prev()
 				})
 				// 用户在系统音乐播放面板点击下一曲事件
-				this.globalData.BackgroundAudioManager.onEnded(res => {
+				this.globalData.BackgroundAudioManager.onNext(res => {
 					this.next()
 				})
 				// 音频加载中事件，当音频因为数据不足，需要停下来加载时会触发
 				this.globalData.BackgroundAudioManager.onWaiting(res => {
 					this.pause()
-					console.log('++++++++++++++++++++');
 					uni.showLoading({
 						title: '加载中'
 					})
+					uni.setStorageSync('currentTime', this.currentTime)
 				})
 				// 背景音频进入可以播放状态，但不保证后面可以流畅播放
 				this.globalData.BackgroundAudioManager.onWaiting(res => {
@@ -86,7 +89,8 @@
 					uni.hideLoading()
 				})
 				//读取缓存数据
-				const playlist = uni.getStorageSync('playlist')
+				const userInfo = uni.getStorageSync('userInfo')|| {}
+				const playlist = uni.getStorageSync('playlist') || []
 				const currentTime = uni.getStorageSync('currentTime') || 0
 				const currentIndex = uni.getStorageSync('currentIndex') || 0
 				const playMode = uni.getStorageSync('playMode') || 'list'
@@ -103,34 +107,35 @@
 				this.setLyric({
 					lyrics
 				})
+
+				this.saveUserInfo({
+					userInfo
+				})
 				this.setPlayMode(playMode)
 
 			},
 
-		},
-		mounted() {
-			this.initBackAudio()
 		},
 		computed: {
 			// 监听当前索引发生变化
 			currentIndex() {
 				return this.$store.state.currentIndex
 			},
-			...mapGetters(['currentSong'])
+			...mapGetters(['currentSong']),
+			...mapState(['currentTime'])
 		},
-		watch: {
-			// currentIndex(a, b) {
-			// 	this.setSongSrc(this.currentSong)
-			// }
-		}
+		
 	}
 </script>
 
 <style>
+	 /* #ifndef APP-PLUS-NVUE */
+	
+	
 	/*每个页面公共css */
-	// iconfont
+
 	@import './static/style/icofont.css';
-	// 公共样式
+	
 	@import './static/style/comon.css';
 
 	img {
@@ -154,4 +159,5 @@
 	page {
 		height: 100%;
 	}
+	/* #endif */
 </style>

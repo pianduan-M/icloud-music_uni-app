@@ -6,7 +6,9 @@
     "pages/login/login",
     "pages/search/search",
     "pages/search_result/search_result",
-    "pages/play_music/play_music"
+    "pages/play_music/play_music",
+    "pages/recommend_song/recommend_song",
+    "pages/play_video/play_video"
   ],
   "subPackages": [],
   "window": {

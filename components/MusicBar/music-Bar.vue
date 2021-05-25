@@ -1,11 +1,11 @@
 <template>
-	<view class="tab-bar-container">
+	<view class="tab-bar-container" v-if="currentSong">
 
 		<navigator url="/pages/play_music/play_music" hover-class="none" open-type="navigate" class="tab-bar-wrap">
 			<!-- 封面 -->
 			<view class="tabbar_song_cover">
 				<div class="song_cover_wrap">
-					<image class="cover" :src="currentSong.al.picUrl" mode="widthFix"></image>
+					<image class="cover" :src="currentSong.al.picUrl" mode="aspectFill"></image>
 				</div>
 			</view>
 			<!-- 音乐信息 -->
